@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Deloitte GPS Mock Case: Ridgeline State University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +57,9 @@ b,strong{font-weight:700}
 .chips a{font:500 12px var(--mono);padding:5px 9px;border-radius:999px;color:var(--fg-2);white-space:nowrap;text-decoration:none}
 .chips a:hover{background:var(--surface-2)}
 .chips a.on{background:var(--fg);color:var(--bg)}
+.speed{display:flex;align-items:center;gap:6px;font:500 11px var(--mono);color:var(--muted);flex:none}
+.speed select{font:500 12px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:3px 4px}
+
 /* hero */
 .hero{padding-block:56px 40px}
 .hero .eyebrow{color:var(--accent-ink);margin-bottom:14px}
@@ -72,6 +75,7 @@ b,strong{font-weight:700}
 .sh{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .idx{font:600 13px var(--mono);color:var(--accent-ink)}
 .sh h2{font-size:clamp(26px,4.4vw,32px);line-height:1.15;font-weight:750}
+.sh .listen{margin-left:auto}
 .sub{color:var(--fg-2);margin-top:8px;max-width:40em}
 
 .btn{font:600 14px/1.2 var(--body);border-radius:8px;padding:9px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
@@ -278,7 +282,8 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   .hrow,.axis{grid-template-columns:minmax(0,1fr)}
   .axis>div:first-child{display:none}
   .iv p{font-size:18px}
-  }
+  .speed span{display:none}
+}
 @media (max-width:420px){
   .branches{grid-template-columns:minmax(0,1fr)}
 }
@@ -302,6 +307,10 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 .mapnote{font:500 12px var(--mono);color:var(--fg-2);margin:8px 0 0}
 .bar.b3{background:var(--fg-2)}
 /* voice menu */
+.voicebar{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:22px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.voicebar label{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.voicebar select{flex:1 1 220px;min-width:0;max-width:100%;font:500 13px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 6px}
+.vhint{flex-basis:100%;margin:0;font-size:14px;line-height:1.45;color:var(--fg-2)}
 @media (max-width:600px){.given>div:last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:420px){
   .scorer li{grid-template-columns:auto minmax(0,1fr)}
@@ -333,27 +342,33 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 .tw th,.tw td{white-space:normal}
 @media (max-width:600px){.tw th,.tw td{padding:6px 5px;font-size:13.5px}.tw th{font-size:10px}}
 
-/* own framework builder */
-.builder{margin-top:0}
+/* framework builder */
 .buckets{display:grid;gap:10px}
-.bucket{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.bucket{background:var(--surface-2,#1b252a);border:1px solid var(--line,#29343a);border-radius:var(--r,10px);padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:12px}
+.bmain{min-width:0}
 .bh{display:flex;align-items:center;gap:8px}
-.bh .n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:700 12px/22px var(--mono);text-align:center}
-.btitle{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:700 15px/1.4 var(--body);padding:4px 2px;outline:none}
-.btitle:focus{border-bottom-color:var(--accent)}
-.btitle::placeholder{color:var(--muted);font-weight:400}
-.bx{flex:0 0 auto;background:transparent;border:0;color:var(--muted);font:700 15px/1 var(--body);cursor:pointer;padding:2px 7px;border-radius:6px}
-.bx:hover{color:var(--fg-2);background:var(--surface)}
+.bh .n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--accent,#86BC25);color:var(--on-accent,#06130E);font:700 12px/22px var(--mono,monospace);text-align:center}
+.btitle{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px solid var(--line,#29343a);color:var(--fg,#e5ecef);font:700 15px/1.4 var(--body,inherit);padding:4px 2px;outline:none}
+.btitle:focus{border-bottom-color:var(--accent,#86BC25)}
+.btitle::placeholder{color:var(--muted,#7c8992);font-weight:400}
+.bx{flex:0 0 auto;background:transparent;border:0;color:var(--muted,#7c8992);font:700 15px/1 var(--body,inherit);cursor:pointer;padding:2px 7px;border-radius:6px}
+.bx:hover{color:var(--fg-2,#a8b4bb);background:var(--surface,#151c20)}
 .bullets{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
 .bullets li{display:flex;align-items:center;gap:6px}
-.bullet{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px dashed var(--line);color:var(--fg);font:400 14px/1.5 var(--body);padding:3px 2px;outline:none}
-.bullet:focus{border-bottom-color:var(--accent-ink)}
-.bullet::placeholder{color:var(--muted)}
-.addb{margin-top:8px;background:transparent;border:1px dashed var(--line);color:var(--accent-ink);font:600 12px/1 var(--body);padding:7px 10px;border-radius:8px;cursor:pointer}
-.addb:hover{border-color:var(--accent);color:var(--accent)}
+.bullet{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px dashed var(--line,#29343a);color:var(--fg,#e5ecef);font:400 14px/1.5 var(--body,inherit);padding:3px 2px;outline:none}
+.bullet:focus{border-bottom-color:var(--accent-ink,#B8DF6A)}
+.bullet::placeholder{color:var(--muted,#7c8992)}
+.addb{margin-top:8px;background:transparent;border:1px dashed var(--line,#29343a);color:var(--accent-ink,#B8DF6A);font:600 12px/1 var(--body,inherit);padding:7px 10px;border-radius:8px;cursor:pointer}
+.addb:hover{border-color:var(--accent,#86BC25);color:var(--accent,#86BC25)}
+.bwhy{display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--line,#29343a);padding-left:12px;min-width:0}
+.bwhy label{font:600 10px/1 var(--mono,monospace);letter-spacing:.09em;text-transform:uppercase;color:var(--muted,#7c8992)}
+.bwhy textarea{flex:1;min-height:96px;background:transparent;border:1px dashed var(--line,#29343a);border-radius:8px;color:var(--fg,#e5ecef);font:400 13px/1.5 var(--body,inherit);padding:8px;outline:none;resize:vertical}
+.bwhy textarea:focus{border-color:var(--accent,#86BC25)}
+.bwhy textarea::placeholder{color:var(--muted,#7c8992)}
 .bacts{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
 .bacts .btn:disabled{opacity:.45;cursor:not-allowed}
-.bhint{color:var(--muted);font:400 12px/1.4 var(--body)}
+.bhint{color:var(--muted,#7c8992);font:400 12px/1.4 var(--body,inherit)}
+@media(max-width:720px){.bucket{grid-template-columns:1fr}.bwhy{border-left:0;padding-left:0;border-top:1px dashed var(--line,#29343a);padding-top:8px}}
 </style>
 
 <nav class="rail" aria-label="Case steps">
@@ -361,6 +376,11 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     <div class="chips" id="chips">
       <a href="#primer">Primer</a><a href="#prompt">Prompt</a><a href="#clarify">Clarify</a><a href="#framework">Framework</a><a href="#ex1">Exhibit 1</a><a href="#ex2">Layoffs</a><a href="#liab">Balance sheet</a><a href="#sizing">Close the gap</a><a href="#prioritize">Prioritize</a><a href="#recommend">Recommend</a><a href="#drills">Drills</a><a href="#test">Test</a>
     </div>
+    <label class="speed" for="rate"><span>Speed</span>
+      <select id="rate" aria-label="Read-aloud speed">
+        <option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+      </select>
+    </label>
   </div>
 </nav>
 
@@ -370,7 +390,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   <h1>Ridgeline State University</h1>
   <p class="lede" data-say>A public university has a 24 million dollar structural deficit, and the board's finance committee wants to cut 240 jobs to close it. The president asks: is there another way? Work out what the layoffs would really save, then find the money in the balance sheet, in natural attrition, and in new revenue.</p>
   <ol class="how">
-    <li><b>Read</b> the interviewer's prompt.</li>
+    <li><b>Listen or read</b> the interviewer's prompt. Every step has a Listen button.</li>
     <li><b>Answer out loud</b> before you reveal anything. Use the timers.</li>
     <li><b>Compare</b> with the strong answer, then move to the next step.</li>
   </ol>
@@ -379,7 +399,12 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     <a class="btn" href="#primer">2-minute primer first</a>
     <a class="btn" href="#ex2">Jump to the layoff math</a>
   </div>
-  
+  <div class="voicebar">
+    <label for="voicePick">Read-aloud voice</label>
+    <select id="voicePick"></select>
+    <button class="btn small" type="button" id="voiceTest">Try it</button>
+    <p class="vhint">Sounds robotic? Pick a voice marked "natural." For the most human voices, open this page in Microsoft Edge, which includes free natural voices. On a Mac, you can also download a Premium voice in System Settings › Accessibility › Spoken Content › System voice › Manage Voices.</p>
+  </div>
 </header>
 
 <div class="wrap">
@@ -1105,7 +1130,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   ];
   const testq=$("#testq");
   TEST.forEach((t,n)=>{const d=document.createElement("div");d.className="mc";d.dataset.answer=t.a;d.dataset.group="test";
-    d.innerHTML=`<div class="mc-head"><p class="stem" data-say="Question ${n+1}. ${t.q.replace(/"/g,"&quot;")}"><span class="qn">Q${n+1}</span>${t.q}</p></div>
+    d.innerHTML=`<div class="mc-head"><p class="stem" data-say="Question ${n+1}. ${t.q.replace(/"/g,"&quot;")}"><span class="qn">Q${n+1}</span>${t.q}</p><button class="btn small qlisten" type="button" aria-label="Listen to question ${n+1}">Listen</button></div>
       <div class="opts">${t.o.map(o=>`<button class="opt" type="button" data-say="${o.replace(/"/g,"&quot;")}">${o}</button>`).join("")}</div>
       <div class="why" hidden><p data-say="${t.w.replace(/"/g,"&quot;")}">${t.w}</p></div>`;
     testq.appendChild(d);});
@@ -1130,6 +1155,42 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   $("#resetTest").addEventListener("click",()=>{$$('.mc[data-group="test"]').forEach(resetMC);score();$("#test").scrollIntoView();});
   score();
 
+  /* ---------- read aloud, with a voice menu ---------- */
+  const synth=window.speechSynthesis,rateSel=$("#rate"),vSel=$("#voicePick");
+  try{const r=localStorage.getItem(PAGEKEY+"-rate");if(r)rateSel.value=r;}catch(e){}
+  rateSel.addEventListener("change",()=>{try{localStorage.setItem(PAGEKEY+"-rate",rateSel.value);}catch(e){}});
+  let speakingBtn=null,voice=null,voices=[];
+  const vrank=v=>(/natural|neural/i.test(v.name)?0:/premium/i.test(v.name)?1:/enhanced/i.test(v.name)?2:/google/i.test(v.name)?3:4)+(/^en[-_]US/i.test(v.lang)?0:.5);
+  function loadVoices(){
+    if(!synth)return;
+    voices=synth.getVoices().filter(v=>/^en/i.test(v.lang)).sort((a,b)=>vrank(a)-vrank(b)||a.name.localeCompare(b.name));
+    if(!vSel)return;
+    let saved=null;try{saved=localStorage.getItem(PAGEKEY+"-voice");}catch(e){}
+    vSel.innerHTML=voices.length?voices.map((v,i)=>`<option value="${i}">${v.name.replace(/[<>&"]/g,"")}${vrank(v)<2?" (natural)":""}</option>`).join(""):'<option value="">Browser default</option>';
+    let idx=voices.findIndex(v=>v.name===saved);if(idx<0)idx=0;
+    if(voices.length)vSel.value=String(idx);voice=voices[idx]||null;
+  }
+  if(vSel)vSel.addEventListener("change",()=>{voice=voices[+vSel.value]||null;try{localStorage.setItem(PAGEKEY+"-voice",voice?voice.name:"");}catch(e){}});
+  loadVoices();
+  if(synth&&"onvoiceschanged" in synth)synth.addEventListener("voiceschanged",loadVoices);
+  function textOf(el){return(el.getAttribute("data-say")||el.innerText||"").replace(/\s+/g," ").trim();}
+  function visible(el){return!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);}
+  function stop(){if(synth)synth.cancel();if(speakingBtn){speakingBtn.textContent=speakingBtn.dataset.label;speakingBtn.setAttribute("aria-pressed","false");speakingBtn=null;}}
+  function speakChunks(btn,chunks){
+    if(!synth||!chunks.length)return;
+    if(speakingBtn===btn){stop();return;}
+    stop();
+    speakingBtn=btn;btn.dataset.label=btn.dataset.label||btn.textContent;btn.textContent="Stop";btn.setAttribute("aria-pressed","true");
+    chunks.forEach((c,i)=>{const u=new SpeechSynthesisUtterance(c);u.rate=+rateSel.value;if(voice){u.voice=voice;u.lang=voice.lang;}else u.lang="en-US";
+      if(i===chunks.length-1)u.onend=()=>{if(speakingBtn===btn)stop();};synth.speak(u);});
+  }
+  function speak(btn,els){const chunks=[];els.filter(visible).forEach(el=>{textOf(el).split(/(?<=[.?!])\s+(?=[A-Z0-9"“])/).forEach(c=>{if(c)chunks.push(c);});});speakChunks(btn,chunks);}
+  if(!synth){$$(".listen,.qlisten").forEach(b=>b.hidden=true);$(".speed").hidden=true;const vb=$(".voicebar");if(vb)vb.hidden=true;}
+  else{
+    $$(".listen").forEach(b=>{b.dataset.label=b.textContent;b.addEventListener("click",()=>{const sec=b.closest("section");speak(b,$$("[data-say]",sec).filter(el=>!el.parentElement.closest("[data-say]")));});});
+    document.addEventListener("click",e=>{const b=e.target.closest(".qlisten");if(!b)return;const mc=b.closest(".mc");speak(b,$$("[data-say]",mc).filter(el=>!el.parentElement.closest("[data-say]")));});
+    const vt=$("#voiceTest");if(vt){vt.dataset.label=vt.textContent;vt.addEventListener("click",()=>speakChunks(vt,["Hi. This is how I'll read your case.","Pick another voice if this one sounds robotic."]));}
+  }
   /* ---------- rail highlight ---------- */
   const chips=$$("#chips a"),map=new Map(chips.map(a=>[a.getAttribute("href").slice(1),a]));
   if("IntersectionObserver" in window){
@@ -1138,16 +1199,19 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   }
 })();
 </script>
-
 <script>
 (function(){
-  var KEY='ridgeline-own-frame-v1',MAX=5;
+  var MAX=5;
+  var KEY='own-frame:'+location.pathname;
+  var LEGACY=(location.pathname.indexOf('ridgeline')>=0)?'ridgeline-own-frame-v1':null;
   var frame=document.getElementById('ownframe'),btn=document.getElementById('ownbtn'),
       wrap=document.getElementById('buckets'),addB=document.getElementById('addbucket'),
       clr=document.getElementById('clearframe'),hint=document.getElementById('bhint');
   if(!frame||!btn||!wrap)return;
   var data=load();
-  function load(){try{var d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.buckets))return d;}catch(e){}return{buckets:[]};}
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.buckets))return d;}catch(e){}
+    if(LEGACY){try{var l=JSON.parse(localStorage.getItem(LEGACY));if(l&&Array.isArray(l.buckets)){try{localStorage.removeItem(LEGACY)}catch(e){}return l;}}catch(e){}}
+    return{buckets:[]};}
   var t=null;
   function save(){clearTimeout(t);t=setTimeout(function(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}},250);}
   function bulletDOM(){var li=document.createElement('li');
@@ -1155,6 +1219,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     var rm=document.createElement('button');rm.className='bx';rm.type='button';rm.textContent='\u00d7';rm.setAttribute('aria-label','Remove bullet');
     li.appendChild(inp);li.appendChild(rm);return li;}
   function bucketDOM(){var div=document.createElement('div');div.className='bucket';
+    var main=document.createElement('div');main.className='bmain';
     var bh=document.createElement('div');bh.className='bh';
     var n=document.createElement('span');n.className='n';
     var ti=document.createElement('input');ti.className='btitle';ti.placeholder='Bucket name';ti.setAttribute('aria-label','Bucket name');
@@ -1162,34 +1227,36 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     bh.appendChild(n);bh.appendChild(ti);bh.appendChild(rm);
     var ul=document.createElement('ul');ul.className='bullets';ul.appendChild(bulletDOM());
     var ab=document.createElement('button');ab.className='addb';ab.type='button';ab.textContent='+ Add bullet';
-    div.appendChild(bh);div.appendChild(ul);div.appendChild(ab);return div;}
-  function renumber(){var els=wrap.querySelectorAll('.bucket');els.forEach(function(el,ix){el.querySelector('.n').textContent=ix+1;});
+    main.appendChild(bh);main.appendChild(ul);main.appendChild(ab);
+    var why=document.createElement('div');why.className='bwhy';
+    var lb=document.createElement('label');lb.textContent='Why it matters';
+    var ta=document.createElement('textarea');ta.className='why';ta.placeholder='Why is this bucket important?';ta.setAttribute('aria-label','Why this bucket matters');
+    why.appendChild(lb);why.appendChild(ta);
+    div.appendChild(main);div.appendChild(why);return div;}
+  function renumber(){wrap.querySelectorAll('.bucket').forEach(function(el,ix){el.querySelector('.n').textContent=ix+1;});
     var c=data.buckets.length;
     hint.textContent=c?(c+' of '+MAX+' buckets \u00b7 unlimited bullets'):'Up to '+MAX+' buckets \u00b7 unlimited bullets';
     addB.disabled=c>=MAX;addB.textContent=c>=MAX?'Bucket limit reached':'+ Add bucket';}
   function sync(){var arr=[];wrap.querySelectorAll('.bucket').forEach(function(el){
-      var b={title:el.querySelector('.btitle').value,bullets:[]};
+      var b={title:el.querySelector('.btitle').value,bullets:[],why:el.querySelector('.why').value};
       el.querySelectorAll('.bullet').forEach(function(inp){b.bullets.push(inp.value);});
       arr.push(b);});
     data.buckets=arr;save();renumber();}
-  function addBucket(){if(data.buckets.length>=MAX)return null;
-    var el=bucketDOM();wrap.appendChild(el);sync();el.querySelector('.btitle').focus();return el;}
+  function addBucket(){if(data.buckets.length>=MAX)return;
+    var el=bucketDOM();wrap.appendChild(el);sync();el.querySelector('.btitle').focus();}
   function addBullet(bEl,afterIdx){var ul=bEl.querySelector('.bullets');var li=bulletDOM();
     if(afterIdx<0||afterIdx>=ul.children.length)ul.appendChild(li);else ul.insertBefore(li,ul.children[afterIdx]);
     sync();return li;}
-  function fill(){if(!data.buckets.length)return;wrap.innerHTML='';
+  function fill(){wrap.innerHTML='';
     data.buckets.forEach(function(b){var el=bucketDOM();el.querySelector('.btitle').value=b.title||'';
+      el.querySelector('.why').value=b.why||'';
       var ul=el.querySelector('.bullets');ul.innerHTML='';
       (b.bullets&&b.bullets.length?b.bullets:['']).forEach(function(v){var li=bulletDOM();li.querySelector('.bullet').value=v;ul.appendChild(li);});
       wrap.appendChild(el);});renumber();}
   btn.addEventListener('click',function(){var open=frame.hidden;frame.hidden=!open;
     btn.setAttribute('aria-expanded',open?'true':'false');
-    if(open&&!data.buckets.length){data.buckets=[{title:'',bullets:['']}];fill();save();}
-    if(open){wrap.querySelectorAll('.bucket').forEach(function(el,ix){
-        el.querySelector('.btitle').value=data.buckets[ix].title||'';
-        var ul=el.querySelector('.bullets');ul.innerHTML='';
-        (data.buckets[ix].bullets.length?data.buckets[ix].bullets:['']).forEach(function(v){var li=bulletDOM();li.querySelector('.bullet').value=v;ul.appendChild(li);});});
-      renumber();}});
+    if(open&&!data.buckets.length){data.buckets=[{title:'',bullets:[''],why:''}];fill();save();}
+    else if(open){fill();}});
   addB.addEventListener('click',addBucket);
   clr.addEventListener('click',function(){if(!confirm('Clear your framework?'))return;
     data.buckets=[];wrap.innerHTML='';save();renumber();});
@@ -1211,7 +1278,8 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     if(e.key==='Backspace'){var t3=e.target;
       if(t3.classList.contains('bullet')&&!t3.value){var li=t3.closest('li');
         if(li.parentNode.children.length>1){e.preventDefault();var ul=li.parentNode;var prev=li.previousElementSibling;li.remove();sync();
-          if(prev)prev.querySelector('.bullet').focus();else{var bEl=t3.closest('.bucket');var nt=bEl.querySelector('.btitle');if(nt)nt.focus();}}}}});
+          if(prev)prev.querySelector('.bullet').focus();else{var nt=t3.closest('.bucket').querySelector('.btitle');if(nt)nt.focus();}}}}});
 })();
 </script>
+
 </body>
