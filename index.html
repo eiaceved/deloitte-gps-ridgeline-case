@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Deloitte GPS Mock Case: Ridgeline State University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,12 +7,12 @@
 /* Layout: one reading column (max 820px) under a sticky step rail. Every step runs the same loop:
    interviewer prompt -> your move -> reveal a strong answer. Exhibits sit inside the column like workpapers. */
 :root{
-  --bg:#f2f5f6; --surface:#ffffff; --surface-2:#e8eef0; --fg:#13202a; --fg-2:#44525d; --muted:#6c7a84; --line:#d4dce0;
-  --accent:#0d6b61; --accent-ink:#0a5a51; --accent-soft:#dbeeea; --on-accent:#ffffff;
-  --s1:#2a78d6; --s2:#eb6834; --grid:#e2e8ea; --axis:#b6c1c7;
-  --good:#0ca30c; --good-ink:#006300; --crit:#d03b3b; --crit-ink:#ad2828;
-  --h1:#e6f0fc; --h2:#b7d3f6; --h3:#6da7ec; --h4:#2a78d6; --h5:#104281;
-  --dot:#eb6834; --dot-ink:#111111; --tip-bg:#13202a; --tip-fg:#ffffff;
+  --bg:#0d1215; --surface:#151c20; --surface-2:#1b252a; --fg:#e5ecef; --fg-2:#a8b4bb; --muted:#7c8992; --line:#29343a;
+  --accent:#86BC25; --accent-ink:#B8DF6A; --accent-soft:#15230B; --on-accent:#06130E;
+  --s1:#3987e5; --s2:#d95926; --grid:#222c32; --axis:#3a464d;
+  --good:#0ca30c; --good-ink:#3dc43d; --crit:#d03b3b; --crit-ink:#ff8484;
+  --h1:#1a2531; --h2:#1c3c63; --h3:#22599b; --h4:#3987e5; --h5:#86b6ef;
+  --dot:#f07a45; --dot-ink:#111111; --tip-bg:#e5ecef; --tip-fg:#0d1215;
   --display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -57,9 +57,6 @@ b,strong{font-weight:700}
 .chips a{font:500 12px var(--mono);padding:5px 9px;border-radius:999px;color:var(--fg-2);white-space:nowrap;text-decoration:none}
 .chips a:hover{background:var(--surface-2)}
 .chips a.on{background:var(--fg);color:var(--bg)}
-.speed{display:flex;align-items:center;gap:6px;font:500 11px var(--mono);color:var(--muted);flex:none}
-.speed select{font:500 12px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:3px 4px}
-
 /* hero */
 .hero{padding-block:56px 40px}
 .hero .eyebrow{color:var(--accent-ink);margin-bottom:14px}
@@ -75,7 +72,6 @@ b,strong{font-weight:700}
 .sh{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .idx{font:600 13px var(--mono);color:var(--accent-ink)}
 .sh h2{font-size:clamp(26px,4.4vw,32px);line-height:1.15;font-weight:750}
-.sh .listen{margin-left:auto}
 .sub{color:var(--fg-2);margin-top:8px;max-width:40em}
 
 .btn{font:600 14px/1.2 var(--body);border-radius:8px;padding:9px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
@@ -282,8 +278,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   .hrow,.axis{grid-template-columns:minmax(0,1fr)}
   .axis>div:first-child{display:none}
   .iv p{font-size:18px}
-  .speed span{display:none}
-}
+  }
 @media (max-width:420px){
   .branches{grid-template-columns:minmax(0,1fr)}
 }
@@ -307,10 +302,6 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 .mapnote{font:500 12px var(--mono);color:var(--fg-2);margin:8px 0 0}
 .bar.b3{background:var(--fg-2)}
 /* voice menu */
-.voicebar{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:22px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
-.voicebar label{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.voicebar select{flex:1 1 220px;min-width:0;max-width:100%;font:500 13px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 6px}
-.vhint{flex-basis:100%;margin:0;font-size:14px;line-height:1.45;color:var(--fg-2)}
 @media (max-width:600px){.given>div:last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:420px){
   .scorer li{grid-template-columns:auto minmax(0,1fr)}
@@ -362,7 +353,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   <h1>Ridgeline State University</h1>
   <p class="lede" data-say>A public university has a 24 million dollar structural deficit, and the board's finance committee wants to cut 240 jobs to close it. The president asks: is there another way? Work out what the layoffs would really save, then find the money in the balance sheet, in natural attrition, and in new revenue.</p>
   <ol class="how">
-    <li><b>Listen or read</b> the interviewer's prompt. Every step has a Listen button.</li>
+    <li><b>Read</b> the interviewer's prompt.</li>
     <li><b>Answer out loud</b> before you reveal anything. Use the timers.</li>
     <li><b>Compare</b> with the strong answer, then move to the next step.</li>
   </ol>
@@ -371,19 +362,14 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
     <a class="btn" href="#primer">2-minute primer first</a>
     <a class="btn" href="#ex2">Jump to the layoff math</a>
   </div>
-  <div class="voicebar">
-    <label for="voicePick">Read-aloud voice</label>
-    <select id="voicePick"></select>
-    <button class="btn small" type="button" id="voiceTest">Try it</button>
-    <p class="vhint">Sounds robotic? Pick a voice marked "natural." For the most human voices, open this page in Microsoft Edge, which includes free natural voices. On a Mac, you can also download a Premium voice in System Settings › Accessibility › Spoken Content › System voice › Manage Voices.</p>
-  </div>
+  
 </header>
 
 <div class="wrap">
 
 <!-- 01 PRIMER -->
 <section class="step" id="primer">
-  <div class="sh"><span class="idx">01</span><h2>How public sector cases work</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">01</span><h2>How public sector cases work</h2></div>
   <p class="def" data-say>Deloitte's Government and Public Services practice, GPS, works with federal, state, and local governments and public institutions like universities. The big difference from a commercial case: the client isn't trying to maximize profit. It's trying to deliver its mission within a budget.</p>
   <p class="sub" data-say>Public prep guides describe GPS first rounds as a behavioral section plus a case of about 30 minutes, and final rounds as longer and more open, sometimes with a group case. Recommendations should weigh mission impact, funding limits, and stakeholder buy-in.</p>
   <div class="split">
@@ -425,7 +411,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 02 PROMPT -->
 <section class="step" id="prompt">
-  <div class="sh"><span class="idx">02</span><h2>The case prompt</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">02</span><h2>The case prompt</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>Ridgeline State University is a public university with about 12 thousand students, 2,600 employees, and a 400 million dollar budget. Last year it ran a 24 million dollar deficit, the third in a row.</p>
@@ -451,7 +437,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 03 CLARIFY -->
 <section class="step" id="clarify">
-  <div class="sh"><span class="idx">03</span><h2>Clarifying questions</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">03</span><h2>Clarifying questions</h2></div>
   <div class="move">
     <span class="lbl">Your move</span>
     <p data-say>Ask two or three clarifying questions. In a public sector case, ask about constraints and stakeholders, not just numbers.</p>
@@ -471,7 +457,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 04 FRAMEWORK -->
 <section class="step" id="framework">
-  <div class="sh"><span class="idx">04</span><h2>Build the framework</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">04</span><h2>Build the framework</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>How would you structure the problem?</p>
@@ -505,7 +491,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 05 EXHIBIT 1 -->
 <section class="step" id="ex1">
-  <div class="sh"><span class="idx">05</span><h2>Exhibit 1: where the money comes from and goes</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">05</span><h2>Exhibit 1: where the money comes from and goes</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>Here's last year's budget and five years of trends. What's driving the deficit?</p>
@@ -558,7 +544,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 06 LAYOFFS -->
 <section class="step" id="ex2">
-  <div class="sh"><span class="idx">06</span><h2>Exhibit 2: what would 240 layoffs really save?</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">06</span><h2>Exhibit 2: what would 240 layoffs really save?</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>The finance committee says cutting 240 positions saves 24 million dollars a year and closes the gap. HR has added some details. What would the layoffs actually save in year 1, and in each year after?</p>
@@ -611,7 +597,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 07 BALANCE SHEET -->
 <section class="step" id="liab">
-  <div class="sh"><span class="idx">07</span><h2>Exhibit 3: what the university owes and owns</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">07</span><h2>Exhibit 3: what the university owes and owns</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>Here's the university's balance sheet, with notes from the finance team. Where do you see savings that repeat every year, without touching a single job?</p>
@@ -662,7 +648,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 08 CLOSE THE GAP -->
 <section class="step" id="sizing">
-  <div class="sh"><span class="idx">08</span><h2>Close the gap without layoffs</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">08</span><h2>Close the gap without layoffs</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>HR has also sized workforce savings that don't need layoffs. About 200 people leave Ridgeline each year on their own, and 80 staff say they'd take an early retirement offer of 6 months' pay. Add two revenue ideas, and here's the full menu. Does it close the gap within two years?</p>
@@ -735,7 +721,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 09 PRIORITIZE -->
 <section class="step" id="prioritize">
-  <div class="sh"><span class="idx">09</span><h2>Sequence the levers</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">09</span><h2>Sequence the levers</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>The president can't launch everything at once. Score these six options, including the layoffs, for ease and impact. Which three go first?</p>
@@ -775,7 +761,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 10 RECOMMEND -->
 <section class="step" id="recommend">
-  <div class="sh"><span class="idx">10</span><h2>The recommendation</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">10</span><h2>The recommendation</h2></div>
   <div class="iv">
     <p class="who">Interviewer</p>
     <p data-say>The president presents to the board next week, and the finance committee still favors layoffs. What's the recommendation?</p>
@@ -804,7 +790,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 11 DRILLS -->
 <section class="step" id="drills">
-  <div class="sh"><span class="idx">11</span><h2>Bonus drills: public finance math</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">11</span><h2>Bonus drills: public finance math</h2></div>
   <div class="drill">
     <h3>Quick reps</h3>
     <div class="reps">
@@ -824,7 +810,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 
 <!-- 12 TEST -->
 <section class="step test" id="test">
-  <div class="sh"><span class="idx">12</span><h2>Practice test</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="sh"><span class="idx">12</span><h2>Practice test</h2></div>
   <p class="sub" data-say>Twelve multiple-choice questions on the Ridgeline case. Pick an answer to see the explanation.</p>
   <div class="scorebar"><span class="score" id="score">0 / 0<small>answered 0 of 12</small></span><button class="btn small" type="button" id="resetTest">Reset test</button></div>
   <div id="testq"></div>
@@ -1093,7 +1079,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   ];
   const testq=$("#testq");
   TEST.forEach((t,n)=>{const d=document.createElement("div");d.className="mc";d.dataset.answer=t.a;d.dataset.group="test";
-    d.innerHTML=`<div class="mc-head"><p class="stem" data-say="Question ${n+1}. ${t.q.replace(/"/g,"&quot;")}"><span class="qn">Q${n+1}</span>${t.q}</p><button class="btn small qlisten" type="button" aria-label="Listen to question ${n+1}">Listen</button></div>
+    d.innerHTML=`<div class="mc-head"><p class="stem" data-say="Question ${n+1}. ${t.q.replace(/"/g,"&quot;")}"><span class="qn">Q${n+1}</span>${t.q}</p></div>
       <div class="opts">${t.o.map(o=>`<button class="opt" type="button" data-say="${o.replace(/"/g,"&quot;")}">${o}</button>`).join("")}</div>
       <div class="why" hidden><p data-say="${t.w.replace(/"/g,"&quot;")}">${t.w}</p></div>`;
     testq.appendChild(d);});
@@ -1118,42 +1104,6 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
   $("#resetTest").addEventListener("click",()=>{$$('.mc[data-group="test"]').forEach(resetMC);score();$("#test").scrollIntoView();});
   score();
 
-  /* ---------- read aloud, with a voice menu ---------- */
-  const synth=window.speechSynthesis,rateSel=$("#rate"),vSel=$("#voicePick");
-  try{const r=localStorage.getItem(PAGEKEY+"-rate");if(r)rateSel.value=r;}catch(e){}
-  rateSel.addEventListener("change",()=>{try{localStorage.setItem(PAGEKEY+"-rate",rateSel.value);}catch(e){}});
-  let speakingBtn=null,voice=null,voices=[];
-  const vrank=v=>(/natural|neural/i.test(v.name)?0:/premium/i.test(v.name)?1:/enhanced/i.test(v.name)?2:/google/i.test(v.name)?3:4)+(/^en[-_]US/i.test(v.lang)?0:.5);
-  function loadVoices(){
-    if(!synth)return;
-    voices=synth.getVoices().filter(v=>/^en/i.test(v.lang)).sort((a,b)=>vrank(a)-vrank(b)||a.name.localeCompare(b.name));
-    if(!vSel)return;
-    let saved=null;try{saved=localStorage.getItem(PAGEKEY+"-voice");}catch(e){}
-    vSel.innerHTML=voices.length?voices.map((v,i)=>`<option value="${i}">${v.name.replace(/[<>&"]/g,"")}${vrank(v)<2?" (natural)":""}</option>`).join(""):'<option value="">Browser default</option>';
-    let idx=voices.findIndex(v=>v.name===saved);if(idx<0)idx=0;
-    if(voices.length)vSel.value=String(idx);voice=voices[idx]||null;
-  }
-  if(vSel)vSel.addEventListener("change",()=>{voice=voices[+vSel.value]||null;try{localStorage.setItem(PAGEKEY+"-voice",voice?voice.name:"");}catch(e){}});
-  loadVoices();
-  if(synth&&"onvoiceschanged" in synth)synth.addEventListener("voiceschanged",loadVoices);
-  function textOf(el){return(el.getAttribute("data-say")||el.innerText||"").replace(/\s+/g," ").trim();}
-  function visible(el){return!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);}
-  function stop(){if(synth)synth.cancel();if(speakingBtn){speakingBtn.textContent=speakingBtn.dataset.label;speakingBtn.setAttribute("aria-pressed","false");speakingBtn=null;}}
-  function speakChunks(btn,chunks){
-    if(!synth||!chunks.length)return;
-    if(speakingBtn===btn){stop();return;}
-    stop();
-    speakingBtn=btn;btn.dataset.label=btn.dataset.label||btn.textContent;btn.textContent="Stop";btn.setAttribute("aria-pressed","true");
-    chunks.forEach((c,i)=>{const u=new SpeechSynthesisUtterance(c);u.rate=+rateSel.value;if(voice){u.voice=voice;u.lang=voice.lang;}else u.lang="en-US";
-      if(i===chunks.length-1)u.onend=()=>{if(speakingBtn===btn)stop();};synth.speak(u);});
-  }
-  function speak(btn,els){const chunks=[];els.filter(visible).forEach(el=>{textOf(el).split(/(?<=[.?!])\s+(?=[A-Z0-9"“])/).forEach(c=>{if(c)chunks.push(c);});});speakChunks(btn,chunks);}
-  if(!synth){$$(".listen,.qlisten").forEach(b=>b.hidden=true);$(".speed").hidden=true;const vb=$(".voicebar");if(vb)vb.hidden=true;}
-  else{
-    $$(".listen").forEach(b=>{b.dataset.label=b.textContent;b.addEventListener("click",()=>{const sec=b.closest("section");speak(b,$$("[data-say]",sec).filter(el=>!el.parentElement.closest("[data-say]")));});});
-    document.addEventListener("click",e=>{const b=e.target.closest(".qlisten");if(!b)return;const mc=b.closest(".mc");speak(b,$$("[data-say]",mc).filter(el=>!el.parentElement.closest("[data-say]")));});
-    const vt=$("#voiceTest");if(vt){vt.dataset.label=vt.textContent;vt.addEventListener("click",()=>speakChunks(vt,["Hi. This is how I'll read your case.","Pick another voice if this one sounds robotic."]));}
-  }
   /* ---------- rail highlight ---------- */
   const chips=$$("#chips a"),map=new Map(chips.map(a=>[a.getAttribute("href").slice(1),a]));
   if("IntersectionObserver" in window){
@@ -1163,7 +1113,7 @@ footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;c
 })();
 </script>
 </body>
-<script src="tts.js"></script>
+</script>
 <script src="chat.js"></script>
 <script src="glossary.js"></script>
 </html>
