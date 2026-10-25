@@ -1,0 +1,1169 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Deloitte GPS Mock Case: Ridgeline State University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: one reading column (max 820px) under a sticky step rail. Every step runs the same loop:
+   interviewer prompt -> your move -> reveal a strong answer. Exhibits sit inside the column like workpapers. */
+:root{
+  --bg:#f2f5f6; --surface:#ffffff; --surface-2:#e8eef0; --fg:#13202a; --fg-2:#44525d; --muted:#6c7a84; --line:#d4dce0;
+  --accent:#0d6b61; --accent-ink:#0a5a51; --accent-soft:#dbeeea; --on-accent:#ffffff;
+  --s1:#2a78d6; --s2:#eb6834; --grid:#e2e8ea; --axis:#b6c1c7;
+  --good:#0ca30c; --good-ink:#006300; --crit:#d03b3b; --crit-ink:#ad2828;
+  --h1:#e6f0fc; --h2:#b7d3f6; --h3:#6da7ec; --h4:#2a78d6; --h5:#104281;
+  --dot:#eb6834; --dot-ink:#111111; --tip-bg:#13202a; --tip-fg:#ffffff;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1215; --surface:#151c20; --surface-2:#1b252a; --fg:#e5ecef; --fg-2:#a8b4bb; --muted:#7c8992; --line:#29343a;
+    --accent:#4cc2b1; --accent-ink:#72d4c6; --accent-soft:#11302c; --on-accent:#06201c;
+    --s1:#3987e5; --s2:#d95926; --grid:#222c32; --axis:#3a464d;
+    --good:#0ca30c; --good-ink:#3dc43d; --crit:#d03b3b; --crit-ink:#ff8484;
+    --h1:#1a2531; --h2:#1c3c63; --h3:#22599b; --h4:#3987e5; --h5:#86b6ef;
+    --dot:#f07a45; --dot-ink:#111111; --tip-bg:#e5ecef; --tip-fg:#0d1215;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1215; --surface:#151c20; --surface-2:#1b252a; --fg:#e5ecef; --fg-2:#a8b4bb; --muted:#7c8992; --line:#29343a;
+  --accent:#4cc2b1; --accent-ink:#72d4c6; --accent-soft:#11302c; --on-accent:#06201c;
+  --s1:#3987e5; --s2:#d95926; --grid:#222c32; --axis:#3a464d;
+  --good:#0ca30c; --good-ink:#3dc43d; --crit:#d03b3b; --crit-ink:#ff8484;
+  --h1:#1a2531; --h2:#1c3c63; --h3:#22599b; --h4:#3987e5; --h5:#86b6ef;
+  --dot:#f07a45; --dot-ink:#111111; --tip-bg:#e5ecef; --tip-fg:#0d1215;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-stretch:86%;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0 0 .8em}
+a{color:var(--accent-ink)}
+b,strong{font-weight:700}
+.eyebrow,.lbl,.who{font:500 11px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* rail */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.rail-in{max-width:820px;margin:0 auto;padding:8px 20px;display:flex;gap:10px;align-items:center}
+.chips{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none;padding-block:2px}
+.chips::-webkit-scrollbar{display:none}
+.chips a{font:500 12px var(--mono);padding:5px 9px;border-radius:999px;color:var(--fg-2);white-space:nowrap;text-decoration:none}
+.chips a:hover{background:var(--surface-2)}
+.chips a.on{background:var(--fg);color:var(--bg)}
+.speed{display:flex;align-items:center;gap:6px;font:500 11px var(--mono);color:var(--muted);flex:none}
+.speed select{font:500 12px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:3px 4px}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero .eyebrow{color:var(--accent-ink);margin-bottom:14px}
+.hero h1{font-size:clamp(40px,8vw,64px);line-height:1;font-weight:800;font-stretch:80%}
+.lede{font-size:21px;line-height:1.5;color:var(--fg-2);max-width:36em;margin-top:18px}
+.how{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.how li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;font-size:15px;line-height:1.4;counter-increment:how}
+.how li::before{content:counter(how);display:block;font:600 12px var(--mono);color:var(--accent-ink);margin-bottom:4px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+/* steps */
+.step{padding-block:52px;border-top:1px solid var(--line);scroll-margin-top:56px}
+.sh{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.idx{font:600 13px var(--mono);color:var(--accent-ink)}
+.sh h2{font-size:clamp(26px,4.4vw,32px);line-height:1.15;font-weight:750}
+.sh .listen{margin-left:auto}
+.sub{color:var(--fg-2);margin-top:8px;max-width:40em}
+
+.btn{font:600 14px/1.2 var(--body);border-radius:8px;padding:9px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.small{font-size:13px;padding:6px 10px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn svg{width:14px;height:14px;fill:currentColor;flex:none}
+
+.iv{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-top:22px}
+.who{color:var(--muted);margin-bottom:8px}
+.iv p{font-size:19px;line-height:1.55}
+.iv p:last-child{margin-bottom:0}
+
+.move{display:flex;gap:12px 16px;align-items:center;flex-wrap:wrap;margin-top:18px;padding-block:14px;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line)}
+.move .lbl{color:var(--accent-ink);flex:none}
+.move p{margin:0;flex:1 1 260px;min-width:0;font-weight:600}
+.move .acts{display:flex;gap:8px;flex-wrap:wrap}
+
+.ans{background:var(--accent-soft);border-radius:var(--r);padding:20px 22px;margin-top:14px}
+.ans .who{color:var(--accent-ink)}
+.ans h3{font-size:19px;margin:18px 0 8px;font-weight:700}
+.ans h3:first-of-type{margin-top:4px}
+.ans ul{margin:0 0 .6em;padding-left:1.2em}
+.ans li{margin-bottom:.35em}
+.script{font-size:18px;line-height:1.6}
+.script p{margin-bottom:.7em}
+.note{font-size:15px;color:var(--fg-2)}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:16px}
+.facts div{background:var(--surface);padding:12px 14px;min-width:0}
+.facts .k{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.facts .v{font:700 22px/1.2 var(--display);font-stretch:86%;margin-top:4px}
+.facts .d{font-size:13px;color:var(--fg-2);line-height:1.35;margin-top:2px}
+
+/* primer */
+.def{font:600 clamp(21px,3.4vw,26px)/1.35 var(--display);font-stretch:92%;margin-top:22px;max-width:30em}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;min-width:0}
+.panel h3{font-size:19px;font-weight:700}
+.panel .tag{font:500 11px var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:2px 0 8px}
+.panel ul{margin:0;padding-left:1.1em;font-size:16px}
+.panel li{margin-bottom:.3em}
+.cycle{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.cycle li{position:relative;background:var(--surface-2);border-radius:8px;padding:12px 12px 10px;min-width:0}
+.cycle li b{display:block;font:700 17px var(--display);font-stretch:88%}
+.cycle li span{font-size:14px;color:var(--fg-2);line-height:1.35;display:block;margin-top:2px}
+.cycle li:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:12px;height:12px;border-top:2px solid var(--muted);border-right:2px solid var(--muted);transform:translateY(-50%) rotate(45deg)}
+.cycle-note{font:500 12px var(--mono);color:var(--muted);margin-top:10px}
+.vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.term b{display:block;font:700 16px var(--display);font-stretch:90%;margin-bottom:3px}
+.term p{margin:0;font-size:15px;line-height:1.45;color:var(--fg-2)}
+.h-sec{font:500 11px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:30px}
+
+/* qa list */
+.qa{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.qa li{background:var(--surface);border-radius:8px;padding:12px 14px}
+.qa .q{font-weight:700}
+.qa .a{color:var(--fg-2);margin-top:2px}
+.qa .a::before{content:"Interviewer: ";font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* framework tree */
+.tree{margin-top:6px}
+.root{background:var(--fg);color:var(--bg);border-radius:8px;padding:12px 16px;font:700 18px/1.3 var(--display);font-stretch:90%;text-align:center;position:relative}
+.root::after{content:"";position:absolute;left:50%;bottom:-16px;width:2px;height:16px;background:var(--muted)}
+.branches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px;padding-top:14px;border-top:2px solid var(--muted)}
+.branch{background:var(--surface);border-radius:8px;padding:12px 13px;min-width:0}
+.branch .n{font:600 12px var(--mono);color:var(--accent-ink)}
+.branch b{display:block;font:700 16px/1.25 var(--display);font-stretch:90%;margin:2px 0 6px}
+.branch ul{margin:0;padding-left:1.05em;font-size:14.5px;line-height:1.4}
+.branch li{margin-bottom:.3em}
+
+/* exhibits */
+.ex{margin:22px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 14px}
+.ex-h{display:flex;justify-content:space-between;align-items:baseline;gap:6px 12px;flex-wrap:wrap}
+.ex-t{font:700 18px var(--display);font-stretch:88%}
+.ex-ref{font:500 12px var(--mono);color:var(--muted)}
+.ex-s{font-size:14px;color:var(--fg-2);margin-top:2px}
+.ex figcaption,.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:12px}
+.multiples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.mini{border:1px solid var(--grid);border-radius:8px;padding:10px 10px 4px;min-width:0}
+.mini .nm{font-weight:700;font-size:14.5px;line-height:1.25;min-height:2.5em}
+.mini .ch{font:500 12px var(--mono);color:var(--fg-2)}
+.mini svg{display:block;width:100%;height:auto;margin-top:4px}
+.tblwrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{font:500 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+
+.hbar{margin-top:16px}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:4px 14px;align-items:center;padding-block:9px;border-bottom:1px solid var(--grid)}
+.hrow:last-of-type{border-bottom:0}
+.hlab b{display:block;font-size:15px;line-height:1.3}
+.hlab span{font-size:13px;color:var(--fg-2);line-height:1.3;display:block}
+.track{position:relative;height:26px}
+.bar{position:absolute;left:0;top:5px;height:16px;border-radius:0 4px 4px 0;background:var(--s1);min-width:2px}
+.bar.b2{background:var(--s2)}
+.bval{position:absolute;top:2px;font:600 13px var(--mono);color:var(--fg);white-space:nowrap;padding-left:6px}
+.tol{position:absolute;top:-4px;bottom:-4px;width:0;border-left:1.5px solid var(--fg-2)}
+.axis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:14px}
+.ticks{position:relative;height:18px;font:500 11px var(--mono);color:var(--muted);border-top:1px solid var(--axis)}
+.ticks span{position:absolute;top:3px;transform:translateX(-50%)}
+.ticks span:first-child{transform:none}
+.ticks span:last-child{transform:translateX(-100%)}
+.status{font:600 12px var(--mono);display:inline-flex;gap:5px;align-items:center;margin-top:3px}
+.status.bad{color:var(--crit-ink)} .status.ok{color:var(--good-ink)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--fg-2);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.tolnote{font:500 12px var(--mono);color:var(--fg-2);margin-top:8px}
+
+/* given table + calc steps */
+.given{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:16px}
+.given div{background:var(--surface);padding:11px 13px;min-width:0}
+.given .k{font-size:13px;color:var(--fg-2);line-height:1.3}
+.given .v{font:700 20px/1.2 var(--display);font-stretch:88%;margin-top:3px}
+.calc{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.calc li{background:var(--surface);border-radius:8px;padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;align-items:center}
+.calc .t{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);grid-column:1/-1}
+.calc .f{font-size:16px;min-width:0}
+.calc .r{font:700 20px var(--display);font-stretch:88%;text-align:right;white-space:nowrap}
+.stepper .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chipset{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chipset span{font:500 12px var(--mono);background:var(--surface);border-radius:6px;padding:4px 8px;color:var(--fg-2)}
+.chipset b{color:var(--fg)}
+
+/* heat map */
+.heat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start;margin-top:12px}
+.heat svg{width:100%;height:auto;display:block}
+.heat svg text{font-family:var(--mono)}
+.reg{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.reg li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;font-size:14.5px;line-height:1.3;padding-block:6px;border-bottom:1px solid var(--grid)}
+.reg .id{width:28px;height:28px;border-radius:50%;background:var(--dot);color:var(--dot-ink);font:600 11px var(--mono);display:grid;place-items:center}
+.reg .sc{font:600 13px var(--mono);color:var(--fg-2);text-align:right;white-space:nowrap}
+.ramp{display:flex;align-items:center;gap:6px;font:500 11px var(--mono);color:var(--muted);margin-top:10px}
+.ramp i{width:22px;height:10px;display:inline-block;border-radius:2px}
+
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
+.phase{background:var(--surface);border-radius:8px;padding:12px 14px;min-width:0}
+.phase .d{font:600 12px var(--mono);color:var(--accent-ink)}
+.phase b{display:block;font:700 18px var(--display);font-stretch:88%;margin:2px 0 6px}
+.phase ul{margin:0;padding-left:1.05em;font-size:15px;line-height:1.4}
+.phase li{margin-bottom:.35em}
+.struct{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
+.struct span{font:600 12px var(--mono);padding:4px 9px;border-radius:999px;background:var(--surface);color:var(--fg)}
+
+/* drivers */
+.drivers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
+.drivers div{background:var(--surface);border-radius:8px;padding:11px 13px;min-width:0}
+.drivers b{display:block;font:700 16px var(--display);font-stretch:90%}
+.drivers p{margin:2px 0 0;font-size:15px;color:var(--fg-2);line-height:1.45}
+.eq{font:600 15px var(--mono);background:var(--surface);border-radius:8px;padding:10px 14px;margin:6px 0 12px;overflow-x:auto}
+.drill{margin-top:34px}
+.drill h3{font-size:22px;font-weight:750}
+
+/* multiple choice */
+.mc{margin-top:20px}
+.mc-head{display:flex;gap:10px;align-items:flex-start}
+.stem{font-weight:700;font-size:18px;line-height:1.45;margin:0 0 10px;flex:1;min-width:0}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;display:flex;gap:10px;align-items:flex-start;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);font:inherit;font-size:16px;line-height:1.45;cursor:pointer;width:100%}
+.opt:hover:not([disabled]){border-color:var(--muted)}
+.opt[disabled]{cursor:default}
+.opt .L{font:600 13px/1.6 var(--mono);color:var(--muted);flex:none}
+.opt .x{flex:1;min-width:0}
+.opt .tag{font:600 12px/1.7 var(--mono);white-space:nowrap;flex:none}
+.opt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 10%,var(--surface))}
+.opt.right .tag{color:var(--good-ink)}
+.opt.wrong{border-color:var(--crit);background:color-mix(in srgb,var(--crit) 9%,var(--surface))}
+.opt.wrong .tag{color:var(--crit-ink)}
+.why{margin-top:10px;padding:13px 16px;border-radius:8px;background:var(--surface-2);font-size:16px}
+.why p:last-child{margin-bottom:0}
+.test .mc{border-top:1px solid var(--line);padding-top:20px;margin-top:22px}
+.test .mc:first-of-type{border-top:0;padding-top:0}
+.qn{font:600 13px var(--mono);color:var(--accent-ink);display:block;margin-bottom:2px}
+.scorebar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 50px);z-index:5;display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--bg);padding-block:10px;margin-top:14px;border-bottom:1px solid var(--line)}
+.score{font:700 22px var(--display);font-stretch:86%}
+.score small{font:500 12px var(--mono);color:var(--muted);margin-left:6px}
+.done{background:var(--accent-soft);border-radius:var(--r);padding:16px 18px;margin-top:24px}
+
+footer{padding-block:40px 64px;border-top:1px solid var(--line);font-size:14px;color:var(--fg-2)}
+
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--tip-bg);color:var(--tip-fg);font:500 12px/1.4 var(--mono);padding:6px 9px;border-radius:6px;max-width:260px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+
+@media (max-width:760px){
+  .branches{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .heat{grid-template-columns:minmax(0,1fr)}
+  .road{grid-template-columns:minmax(0,1fr)}
+  .multiples{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .how{grid-template-columns:minmax(0,1fr)}
+  .split,.vocab,.drivers{grid-template-columns:minmax(0,1fr)}
+  .cycle{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cycle li:nth-child(2)::after{display:none}
+  .given{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hrow,.axis{grid-template-columns:minmax(0,1fr)}
+  .axis>div:first-child{display:none}
+  .iv p{font-size:18px}
+  .speed span{display:none}
+}
+@media (max-width:420px){
+  .branches{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ans:not([hidden]),.why:not([hidden]),.calc li:not([hidden]){animation:rise .28s ease-out}
+  @keyframes rise{from{transform:translateY(4px);opacity:.4}to{transform:none;opacity:1}}
+  html{scroll-behavior:smooth}
+}
+[hidden]:not([hidden=until-found i]){display:none!important}
+/* scoring register */
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 4px}
+.scorer li{grid-template-columns:auto minmax(0,1fr) auto}
+.scorer .nm{min-width:0}
+.pick{display:flex;gap:6px;align-items:center}
+.pick select{font:500 13px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:4px 4px;min-width:44px}
+.pick .sc{min-width:34px}
+.reg .w{display:block;font-size:13px;color:var(--fg-2);margin-top:2px;line-height:1.35}
+.reg .nm b{font-weight:600}
+.mytop{font:600 15px/1.4 var(--body);margin:12px 0 0;color:var(--fg)}
+.mapnote{font:500 12px var(--mono);color:var(--fg-2);margin:8px 0 0}
+.bar.b3{background:var(--fg-2)}
+/* voice menu */
+.voicebar{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:22px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.voicebar label{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.voicebar select{flex:1 1 220px;min-width:0;max-width:100%;font:500 13px var(--mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 6px}
+.vhint{flex-basis:100%;margin:0;font-size:14px;line-height:1.45;color:var(--fg-2)}
+@media (max-width:600px){.given>div:last-child:nth-child(odd){grid-column:1/-1}}
+@media (max-width:420px){
+  .scorer li{grid-template-columns:auto minmax(0,1fr)}
+  .scorer .pick{grid-column:2}
+}
+</style>
+<style>
+/* calculators */
+.calcbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-top:22px}
+.calcbox h3{font-size:19px;font-weight:700;margin:0 0 4px}
+.calcbox .sub{margin-top:2px;font-size:15px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px 14px;margin-top:12px}
+.cgrid label{display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.3;color:var(--fg-2);min-width:0}
+.cgrid input,.cgrid select{font:500 15px var(--mono);background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 8px;width:100%;min-width:0}
+.cout{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.cout div{background:var(--surface-2);border-radius:8px;padding:10px 12px;min-width:0}
+.cout .k{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cout .v{font:700 22px/1.2 var(--display);font-stretch:86%;margin-top:3px}
+.cnote{font-size:15px;line-height:1.5;color:var(--fg-2);margin:12px 0 0}
+.cbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.gb{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.gb .ans{margin-top:0}
+@media (max-width:600px){.gb{grid-template-columns:minmax(0,1fr)}}
+.reps{display:grid;gap:12px;margin-top:14px}
+.rep{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.rep .rq{font-weight:700;font-size:17px;margin:0 0 8px}
+.rep .acts{display:flex;gap:8px;flex-wrap:wrap}
+.rep .ans{margin-top:12px}
+.tw th,.tw td{white-space:normal}
+@media (max-width:600px){.tw th,.tw td{padding:6px 5px;font-size:13.5px}.tw th{font-size:10px}}
+</style>
+
+<nav class="rail" aria-label="Case steps">
+  <div class="rail-in">
+    <div class="chips" id="chips">
+      <a href="#primer">Primer</a><a href="#prompt">Prompt</a><a href="#clarify">Clarify</a><a href="#framework">Framework</a><a href="#ex1">Exhibit 1</a><a href="#ex2">Layoffs</a><a href="#liab">Balance sheet</a><a href="#sizing">Close the gap</a><a href="#prioritize">Prioritize</a><a href="#recommend">Recommend</a><a href="#drills">Drills</a><a href="#test">Test</a>
+    </div>
+    <label class="speed" for="rate"><span>Speed</span>
+      <select id="rate" aria-label="Read-aloud speed">
+        <option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+      </select>
+    </label>
+  </div>
+</nav>
+
+<main>
+<header class="hero wrap">
+  <p class="eyebrow">Deloitte GPS style · higher education · about 35 minutes</p>
+  <h1>Ridgeline State University</h1>
+  <p class="lede" data-say>A public university has a 24 million dollar structural deficit, and the board's finance committee wants to cut 240 jobs to close it. The president asks: is there another way? Work out what the layoffs would really save, then find the money in the balance sheet, in natural attrition, and in new revenue.</p>
+  <ol class="how">
+    <li><b>Listen or read</b> the interviewer's prompt. Every step has a Listen button.</li>
+    <li><b>Answer out loud</b> before you reveal anything. Use the timers.</li>
+    <li><b>Compare</b> with the strong answer, then move to the next step.</li>
+  </ol>
+  <div class="hero-actions">
+    <a class="btn primary" href="#prompt">Start the case</a>
+    <a class="btn" href="#primer">2-minute primer first</a>
+    <a class="btn" href="#ex2">Jump to the layoff math</a>
+  </div>
+  <div class="voicebar">
+    <label for="voicePick">Read-aloud voice</label>
+    <select id="voicePick"></select>
+    <button class="btn small" type="button" id="voiceTest">Try it</button>
+    <p class="vhint">Sounds robotic? Pick a voice marked "natural." For the most human voices, open this page in Microsoft Edge, which includes free natural voices. On a Mac, you can also download a Premium voice in System Settings › Accessibility › Spoken Content › System voice › Manage Voices.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 01 PRIMER -->
+<section class="step" id="primer">
+  <div class="sh"><span class="idx">01</span><h2>How public sector cases work</h2><button class="btn small listen" type="button">Listen</button></div>
+  <p class="def" data-say>Deloitte's Government and Public Services practice, GPS, works with federal, state, and local governments and public institutions like universities. The big difference from a commercial case: the client isn't trying to maximize profit. It's trying to deliver its mission within a budget.</p>
+  <p class="sub" data-say>Public prep guides describe GPS first rounds as a behavioral section plus a case of about 30 minutes, and final rounds as longer and more open, sometimes with a group case. Recommendations should weigh mission impact, funding limits, and stakeholder buy-in.</p>
+  <div class="split">
+    <div class="panel">
+      <h3>Two sides of a budget</h3>
+      <p class="tag">Where the money can come from</p>
+      <ul data-say>
+        <li><b>The operating budget:</b> what comes in and goes out each year. Tuition, state funding, salaries, utilities.</li>
+        <li><b>The balance sheet:</b> what the university owes and owns. Debt, promises to retirees, buildings that need repair, land, and cash reserves.</li>
+        <li>Most candidates only cut the operating budget. Managing the balance sheet can free up money every year without touching jobs.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Adapt your frameworks</h3>
+      <p class="tag">Commercial → public sector</p>
+      <ul data-say>
+        <li><b>Profit</b> becomes mission outcomes within a budget. Here: students who stay and graduate.</li>
+        <li><b>Layoffs</b> carry public costs: severance, lost services, union rules, and attention from the legislature.</li>
+        <li><b>Stakeholders</b> matter more: trustees, staff, faculty, students, and the state.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="h-sec">Twelve terms to drop naturally</p>
+  <div class="vocab">
+    <div class="term" data-say><b>Structural deficit</b><p>A gap that comes back every year because costs grow faster than revenue. One-time fixes don't solve it.</p></div>
+    <div class="term" data-say><b>Recurring vs. one-time</b><p>A recurring saving repeats every year. A one-time gain, like selling land, helps only once.</p></div>
+    <div class="term" data-say><b>Reduction in force</b><p>A formal layoff of positions, usually with notice periods, severance, and union rules on who goes first.</p></div>
+    <div class="term" data-say><b>Attrition</b><p>People leaving on their own, by retiring or moving on. Leaving some of those jobs open shrinks staff without layoffs.</p></div>
+    <div class="term" data-say><b>Voluntary early retirement</b><p>Offering eligible staff a payment to retire early. It costs money once and saves every year after.</p></div>
+    <div class="term" data-say><b>Refinancing</b><p>Replacing old debt with new debt at a lower interest rate, like refinancing a mortgage.</p></div>
+    <div class="term" data-say><b>Callable bond</b><p>A bond the borrower is allowed to pay off early. That's what makes refinancing possible.</p></div>
+    <div class="term" data-say><b>Retiree health liability</b><p>Health benefits promised to retirees, called OPEB: other post-employment benefits. Large and often overlooked.</p></div>
+    <div class="term" data-say><b>Deferred maintenance</b><p>Repairs a campus has put off. It's a hidden liability: the bill grows the longer it waits.</p></div>
+    <div class="term" data-say><b>Energy savings contract</b><p>A company pays for building upgrades and is repaid from the energy they save, so no cash is needed up front.</p></div>
+    <div class="term" data-say><b>Days cash on hand</b><p>Cash reserves divided by daily spending. How long the university could run with no new money. Lenders watch it closely.</p></div>
+    <div class="term" data-say><b>Discount rate</b><p>The share of sticker tuition given back as the university's own aid. A 34 percent discount on 24 thousand dollars means students pay about 15,840.</p></div>
+  </div>
+</section>
+
+<!-- 02 PROMPT -->
+<section class="step" id="prompt">
+  <div class="sh"><span class="idx">02</span><h2>The case prompt</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>Ridgeline State University is a public university with about 12 thousand students, 2,600 employees, and a 400 million dollar budget. Last year it ran a 24 million dollar deficit, the third in a row.</p>
+    <p data-say>The board's finance committee has proposed cutting 240 staff positions, about 9 percent of the workforce, to close the gap. The president wants to avoid layoffs if she can. She asks us: can Ridgeline balance its budget without layoffs, and if not, how few can it get away with? The state requires a balanced budget within two years.</p>
+  </div>
+  <div class="facts">
+    <div><div class="k">Deficit</div><div class="v">$24M</div><div class="d">Third year in a row</div></div>
+    <div><div class="k">Proposal</div><div class="v">240 jobs</div><div class="d">9% of 2,600 staff</div></div>
+    <div><div class="k">Cost per job</div><div class="v">$100K</div><div class="d">Pay plus benefits</div></div>
+    <div><div class="k">Deadline</div><div class="v">2 years</div><div class="d">Set by the state</div></div>
+  </div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Restate the question in one sentence before you do anything else.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="20">20s timer</button><button class="btn primary small reveal" type="button" aria-controls="a-prompt" aria-expanded="false">Show a strong answer</button></div>
+  </div>
+  <div class="ans" id="a-prompt" hidden>
+    <p class="who">Strong answer</p>
+    <div class="script"><p data-say>"So the question is whether Ridgeline can close a recurring 24 million dollar gap within two years without the 240 layoffs, and if some cuts are still needed, how to keep them to a minimum, all while protecting students. Is that right?"</p></div>
+    <p class="note" data-say>Interviewer: "Yes." Saying "recurring" shows you know a structural gap needs savings that repeat every year, not one-time fixes.</p>
+  </div>
+</section>
+
+<!-- 03 CLARIFY -->
+<section class="step" id="clarify">
+  <div class="sh"><span class="idx">03</span><h2>Clarifying questions</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Ask two or three clarifying questions. In a public sector case, ask about constraints and stakeholders, not just numbers.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="60">60s timer</button><button class="btn primary small reveal" type="button" aria-controls="a-clarify" aria-expanded="false">Show strong questions</button></div>
+  </div>
+  <div class="ans" id="a-clarify" hidden>
+    <p class="who">Strong questions, with the interviewer's answers</p>
+    <ul class="qa">
+      <li data-say><div class="q">Is this a one-time gap or a structural one?</div><div class="a">Structural. The deficit grew from 8 million to 16 million to 24 million over the last three years. Enrollment has now leveled off, so finance expects it to hold near 24 million.</div></li>
+      <li data-say><div class="q">Besides the yearly budget, what does the university owe and own: debt, reserves, other obligations?</div><div class="a">Good question. We'll show you. The board's rule is to keep at least 60 days of cash on hand.</div></li>
+      <li data-say><div class="q">What would the layoffs involve?</div><div class="a">Staff only, not tenured faculty. The union contract requires 3 months of severance and cuts by seniority. About a third would come from advising, financial aid, and student services.</div></li>
+      <li data-say><div class="q">What's off the table?</div><div class="a">Sticker tuition can rise no more than 3 percent a year, and state funding will stay flat.</div></li>
+    </ul>
+    <p class="note" style="margin-top:12px" data-say>The second question is the one most candidates skip. A budget gap isn't only a spending problem: debt, retiree promises, land, and reserves can all create room.</p>
+  </div>
+</section>
+
+<!-- 04 FRAMEWORK -->
+<section class="step" id="framework">
+  <div class="sh"><span class="idx">04</span><h2>Build the framework</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>How would you structure the problem?</p>
+  </div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Take 60 seconds. Diagnose the gap, test the layoff plan, find alternatives, and cover timing and risk.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="60">60s timer</button><button class="btn primary small reveal" type="button" aria-controls="a-frame" aria-expanded="false">Show a strong framework</button></div>
+  </div>
+  <div class="ans" id="a-frame" hidden>
+    <p class="who">Strong framework</p>
+    <div class="tree">
+      <div class="root">Can Ridgeline close a $24M recurring gap in 2 years without 240 layoffs?</div>
+      <div class="branches">
+        <div class="branch"><span class="n">1</span><b>Diagnose</b><ul><li>Revenue and cost drivers</li><li>Structural or one-time</li><li>How fast it's growing</li></ul></div>
+        <div class="branch"><span class="n">2</span><b>True cost of layoffs</b><ul><li>Gross vs. net savings</li><li>Severance and one-time costs</li><li>Lost services and tuition</li></ul></div>
+        <div class="branch"><span class="n">3</span><b>Alternatives</b><ul><li>Balance sheet: debt, retiree health, buildings, land</li><li>Workforce without layoffs</li><li>New revenue</li></ul></div>
+        <div class="branch"><span class="n">4</span><b>Bridge and risk</b><ul><li>Reserves as a bridge</li><li>The 60-day cash floor</li><li>Triggers and a backup plan</li></ul></div>
+      </div>
+    </div>
+    <h3>Say it like this</h3>
+    <div class="script"><p data-say>"I'd look at four things. First, what's driving the gap, and whether it's structural. Second, the true cost of the layoff plan, because the headline savings usually overstate what you actually get. Third, alternatives in three buckets: the balance sheet, like debt and retiree benefits; the workforce without layoffs, like attrition and early retirement; and new revenue. Fourth, timing: alternatives take time to ramp up, so how we bridge with reserves and what would trigger a backup plan. I'd start with the drivers."</p></div>
+    <h3>Why it works</h3>
+    <ul data-say>
+      <li>It treats layoffs as one option to test, not the default.</li>
+      <li>It adds the balance sheet, which most candidates miss.</li>
+      <li>It plans for timing and risk, which public boards care about most.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 EXHIBIT 1 -->
+<section class="step" id="ex1">
+  <div class="sh"><span class="idx">05</span><h2>Exhibit 1: where the money comes from and goes</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>Here's last year's budget and five years of trends. What's driving the deficit?</p>
+  </div>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Revenue: $376M</span><span class="ex-ref">Exhibit 1a · $ millions, last year</span></div>
+    <div class="hbar" id="rev"></div>
+  </figure>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Spending: $400M</span><span class="ex-ref">Exhibit 1b · $ millions, last year</span></div>
+    <div class="hbar" id="cost"></div>
+    <figcaption>Revenue minus spending: −$24M.</figcaption>
+  </figure>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Five-year trends</span><span class="ex-ref">Exhibit 1c · 2020 to 2025</span></div>
+    <p class="ex-s">Each panel has its own scale, starting at zero.</p>
+    <div class="multiples" id="mult"></div>
+    <div class="row" style="margin-top:12px"><button class="btn small reveal" type="button" aria-controls="t-ex1" aria-expanded="false">Show as table</button></div>
+    <div class="tblwrap" id="t-ex1" hidden></div>
+    <figcaption>Sticker tuition and fees average $24,000 across in-state and out-of-state students. Source: case data.</figcaption>
+  </figure>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Name the two or three drivers, and put a dollar figure on each one.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="120">2 min timer</button></div>
+  </div>
+  <div class="stepper" style="margin-top:14px">
+    <ol class="calc">
+      <li class="st" hidden data-say="Step 1. Size of the gap. 24 million out of 400 is 6 percent of spending."><span class="t">1 · Size of the gap</span><span class="f">$24M ÷ $400M</span><span class="r tnum">6%</span></li>
+      <li class="st" hidden data-say="Step 2. Net tuition per student. 24 thousand times 1 minus 34 percent is 15,840 dollars. Times 12 thousand students is about 190 million."><span class="t">2 · Net tuition</span><span class="f">$24,000 × (1 − 34%) × 12,000</span><span class="r tnum">≈$190M</span></li>
+      <li class="st" hidden data-say="Step 3. Driver one, enrollment. 1,050 fewer students than in 2020, times 15,840 dollars, is about 16.6 million a year of lost tuition."><span class="t">3 · Fewer students</span><span class="f">1,050 × $15,840</span><span class="r tnum">≈$16.6M</span></li>
+      <li class="st" hidden data-say="Step 4. Driver two, discounting. Each point of discount costs 24 thousand times 1 percent times 12 thousand, or 2.88 million. The rate rose 6 points, so about 17 million a year."><span class="t">4 · Bigger discounts</span><span class="f">6 points × $2.88M a point</span><span class="r tnum">≈$17.3M</span></li>
+      <li class="st" hidden data-say="Step 5. Driver three, benefits. Cost per employee rose about 6 percent a year. People are 65 percent of spending, so this keeps the gap growing."><span class="t">5 · Rising people costs</span><span class="f">Benefits +6% a year on 65% of spending</span><span class="r tnum">↑</span></li>
+      <li class="st" hidden data-say="Step 6. So what. Tuition revenue is shrinking from two directions, fewer students and bigger discounts, while people costs grow. State funding is flat, so it isn't the cause, and sticker increases have only offset part of the drop. The fix has to address both revenue and costs."><span class="t">6 · So what</span><span class="f">Revenue squeezed twice, costs rising; state funding isn't the cause</span><span class="r tnum">✓</span></li>
+    </ol>
+    <div class="row"><button class="btn primary small next" type="button">Reveal step 1 of 6</button><button class="btn small reset" type="button">Start over</button></div>
+  </div>
+  <div class="mc" data-answer="1">
+    <div class="mc-head"><p class="stem" data-say>Quick check: the state cut nothing. Why is "ask the state for more money" a weak first answer?</p></div>
+    <div class="opts">
+      <button class="opt" type="button" data-say>Because states never fund universities.</button>
+      <button class="opt" type="button" data-say>Because funding has been flat and is expected to stay flat. The gap comes from tuition and costs, which the university controls.</button>
+      <button class="opt" type="button" data-say>Because the deficit is too small to matter.</button>
+      <button class="opt" type="button" data-say>Because universities can't receive state money.</button>
+    </div>
+    <div class="why" hidden><p data-say>Good public sector answers focus on what the client can control. The data shows tuition revenue falling and costs rising, so that's where the plan should start.</p></div>
+  </div>
+</section>
+
+
+<!-- 06 LAYOFFS -->
+<section class="step" id="ex2">
+  <div class="sh"><span class="idx">06</span><h2>Exhibit 2: what would 240 layoffs really save?</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>The finance committee says cutting 240 positions saves 24 million dollars a year and closes the gap. HR has added some details. What would the layoffs actually save in year 1, and in each year after?</p>
+  </div>
+  <div class="tblwrap card" style="margin-top:14px">
+    <table class="tw">
+      <thead><tr><th>Item</th><th>Detail from HR</th></tr></thead>
+      <tbody>
+        <tr><td>Positions cut</td><td>240 staff at $100K each, pay plus benefits</td></tr>
+        <tr><td>Severance</td><td>3 months of pay, $25K each, paid once</td></tr>
+        <tr><td>Unemployment insurance</td><td>About $1.5M, paid once. Public universities usually repay the state directly.</td></tr>
+        <tr><td>Where cuts land</td><td>About 80 in advising, financial aid, and student services</td></tr>
+        <tr><td>Students lost</td><td>Fewer advisors means about 120 fewer students stay each year. Each brings $15,840 of net tuition.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Start from the headline 24 million. Subtract the one-time costs, then the tuition that walks out the door.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="90">90s timer</button></div>
+  </div>
+  <div class="stepper" style="margin-top:14px">
+    <ol class="calc">
+      <li class="st" hidden data-say="Step 1. Headline savings. 240 positions times 100 thousand dollars is 24 million a year."><span class="t">1 · Headline savings</span><span class="f">240 × $100K</span><span class="r tnum">$24M</span></li>
+      <li class="st" hidden data-say="Step 2. Severance. 240 times 25 thousand is 6 million, paid once."><span class="t">2 · Severance</span><span class="f">240 × $25K, one time</span><span class="r tnum">−$6M</span></li>
+      <li class="st" hidden data-say="Step 3. Unemployment insurance. About 1.5 million, paid once."><span class="t">3 · Unemployment</span><span class="f">Repaid to the state, one time</span><span class="r tnum">−$1.5M</span></li>
+      <li class="st" hidden data-say="Step 4. Lost tuition. 120 students times 15,840 dollars is about 1.9 million, every year."><span class="t">4 · Lost tuition</span><span class="f">120 × $15,840, every year</span><span class="r tnum">−$1.9M</span></li>
+      <li class="st" hidden data-say="Step 5. Year 1 net. 24 minus 6 minus 1.5 minus 1.9 is about 14.6 million, only about 60 percent of the gap."><span class="t">5 · Year 1 net</span><span class="f">$24M − $6M − $1.5M − $1.9M · about 60% of the gap</span><span class="r tnum">≈$14.6M</span></li>
+      <li class="st" hidden data-say="Step 6. Every year after. 24 minus 1.9 is about 22.1 million. Still short of 24, with worse student services."><span class="t">6 · Each year after</span><span class="f">$24M − $1.9M · still short of $24M</span><span class="r tnum">≈$22.1M</span></li>
+      <li class="st" hidden data-say="Step 7. So what. The layoffs never fully close the gap, cost 7.5 million up front, and cut the services that keep tuition-paying students enrolled. That's a strong reason to look for alternatives first."><span class="t">7 · So what</span><span class="f">Never fully closes the gap, costs $7.5M up front, and hurts retention</span><span class="r tnum">✓</span></li>
+    </ol>
+    <div class="row"><button class="btn primary small next" type="button">Reveal step 1 of 7</button><button class="btn small reset" type="button">Start over</button></div>
+  </div>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Year 1 savings from 240 layoffs</span><span class="ex-ref">Exhibit 2 · $ millions</span></div>
+    <div class="hbar" id="lay"></div>
+    <figcaption>From year 2, severance and unemployment costs drop away, but the lost tuition keeps recurring: about $22.1M a year.</figcaption>
+  </figure>
+  <div class="mc" data-answer="2">
+    <div class="mc-head"><p class="stem" data-say>Quick check: a trustee says, "Layoffs are the only option that saves money every year." What's the best response?</p></div>
+    <div class="opts">
+      <button class="opt" type="button" data-say>Agree, and move on to which jobs to cut.</button>
+      <button class="opt" type="button" data-say>Say layoffs are always wrong.</button>
+      <button class="opt" type="button" data-say>Several alternatives save every year too, like refinancing debt and leaving vacant jobs open. And the layoffs save less than they look, once lost tuition is counted.</button>
+      <button class="opt" type="button" data-say>Say the state will cover the gap.</button>
+    </div>
+    <div class="why" hidden><p data-say>Don't argue with feelings. Answer with numbers: layoffs net about 22 million a year, not 24, and other recurring levers exist. The next exhibit shows where.</p></div>
+  </div>
+</section>
+
+<!-- 07 BALANCE SHEET -->
+<section class="step" id="liab">
+  <div class="sh"><span class="idx">07</span><h2>Exhibit 3: what the university owes and owns</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>Here's the university's balance sheet, with notes from the finance team. Where do you see savings that repeat every year, without touching a single job?</p>
+  </div>
+  <div class="tblwrap card" style="margin-top:14px">
+    <table class="tw">
+      <thead><tr><th>Item</th><th class="n">Size</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Bonds</td><td class="n">$200M</td><td>Callable now. They pay 6% interest; similar bonds today pay about 4%. Refinancing costs about $2M once.</td></tr>
+        <tr><td>Retiree health promise</td><td class="n">$180M</td><td>Costs $12M a year. A group Medicare Advantage plan for retirees 65 and older would cut that about 25%, with similar coverage.</td></tr>
+        <tr><td>Deferred maintenance</td><td class="n">$150M</td><td>Old heating, cooling, and lighting. An energy services company would fund $30M of upgrades and be repaid from the savings. Net gain to Ridgeline: $2.5M a year.</td></tr>
+        <tr><td>Surplus land</td><td class="n">40 acres</td><td>Sell once for about $20M, or lease to a developer for about $1.5M a year.</td></tr>
+        <tr><td>Cash reserves</td><td class="n">$90M</td><td>The board's floor is 60 days of spending.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Size each item as a yearly saving. Watch for the one that's a one-time gain dressed up as a fix.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="120">2 min timer</button><button class="btn small reveal" type="button" aria-controls="h-liab" aria-expanded="false">Show hint</button></div>
+  </div>
+  <div class="ans" id="h-liab" hidden>
+    <p class="who">Hint: recurring or one time?</p>
+    <p data-say>Ask of every item: does this save money every year, or only once? Only recurring savings close a structural gap. One-time money, like reserves or a land sale, can only buy time.</p>
+  </div>
+  <div class="stepper" style="margin-top:14px">
+    <ol class="calc">
+      <li class="st" hidden data-say="Step 1. Refinance the bonds. 200 million times the 2 point drop in rate is 4 million a year. The 2 million cost pays back in about 6 months."><span class="t">1 · Refinance bonds</span><span class="f">$200M × (6% − 4%) · $2M cost pays back in 6 months</span><span class="r tnum">$4M</span></li>
+      <li class="st" hidden data-say="Step 2. Retiree health. 12 million times 25 percent is 3 million a year, and the long-term promise shrinks too."><span class="t">2 · Retiree health</span><span class="f">$12M × 25%</span><span class="r tnum">$3M</span></li>
+      <li class="st" hidden data-say="Step 3. Energy contract. 2.5 million a year with no cash up front, and 30 million comes off the repair backlog."><span class="t">3 · Energy contract</span><span class="f">No upfront cash · $30M off the backlog</span><span class="r tnum">$2.5M</span></li>
+      <li class="st" hidden data-say="Step 4. The land. Lease it for 1.5 million a year. The 20 million sale is one-time money, so it can't fix a recurring gap."><span class="t">4 · Lease the land</span><span class="f">Lease, don't sell: a sale helps only once</span><span class="r tnum">$1.5M</span></li>
+      <li class="st" hidden data-say="Step 5. Total. 4 plus 3 plus 2.5 plus 1.5 is 11 million a year, almost half the gap, without cutting a single job."><span class="t">5 · Balance sheet total</span><span class="f">$4M + $3M + $2.5M + $1.5M · 46% of the gap</span><span class="r tnum">$11M</span></li>
+      <li class="st" hidden data-say="Step 6. Reserves. Daily spending is 400 million divided by 365, about 1.1 million. So 90 million is about 82 days. The 60-day floor is about 66 million, leaving about 24 million of room. Use it only as a bridge."><span class="t">6 · Reserves</span><span class="f">$90M ÷ $1.1M a day ≈ 82 days · room above 60 days ≈ $24M</span><span class="r tnum">Bridge</span></li>
+    </ol>
+    <div class="row"><button class="btn primary small next" type="button">Reveal step 1 of 6</button><button class="btn small reset" type="button">Start over</button></div>
+  </div>
+  <div class="mc" data-answer="1">
+    <div class="mc-head"><p class="stem" data-say>Quick check: a trustee says, "Selling the land brings in 20 million. That covers most of the gap." What do you say?</p></div>
+    <div class="opts">
+      <button class="opt" type="button" data-say>Agree: 20 million is close to 24.</button>
+      <button class="opt" type="button" data-say>The sale helps once, but the gap comes back every year. A lease brings 1.5 million every year. Sale money is better used to pay down debt or fund the bridge.</button>
+      <button class="opt" type="button" data-say>Land can't be sold by a university.</button>
+      <button class="opt" type="button" data-say>Sell it and also lay off the 240 staff.</button>
+    </div>
+    <div class="why" hidden><p data-say>The single most important idea in this case: one-time money can't fix a structural gap. It can only buy time while recurring fixes ramp up.</p></div>
+  </div>
+</section>
+
+<!-- 08 CLOSE THE GAP -->
+<section class="step" id="sizing">
+  <div class="sh"><span class="idx">08</span><h2>Close the gap without layoffs</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>HR has also sized workforce savings that don't need layoffs. About 200 people leave Ridgeline each year on their own, and 80 staff say they'd take an early retirement offer of 6 months' pay. Add two revenue ideas, and here's the full menu. Does it close the gap within two years?</p>
+  </div>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Yearly savings or new revenue by year 3</span><span class="ex-ref">Exhibit 4 · $ millions</span></div>
+    <div class="hbar" id="levers"></div>
+    <figcaption>No option lays anyone off. Pharmacy savings come from re-bidding the employee drug benefit contract.</figcaption>
+  </figure>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Add up the three buckets and compare with 24 million. Then check timing: the state wants balance in two years, and these don't all start on day one.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="120">2 min timer</button><button class="btn small reveal" type="button" aria-controls="h-gap" aria-expanded="false">Show hint</button></div>
+  </div>
+  <div class="ans" id="h-gap" hidden>
+    <p class="who">Hint: plans ramp up, and rarely land at 100 percent</p>
+    <p data-say>The finance team expects about 13.2 million in year 1, 24.2 million in year 2, and the full amount in year 3. Year 1's shortfall, plus one-time costs, has to come from reserves, which can't drop below 60 days of spending.</p>
+  </div>
+  <div class="stepper" style="margin-top:14px">
+    <ol class="calc">
+      <li class="st" hidden data-say="Step 1. Balance sheet. 4 plus 3 plus 2.5 plus 1.5 is 11 million."><span class="t">1 · Balance sheet</span><span class="f">$4M + $3M + $2.5M + $1.5M</span><span class="r tnum">$11M</span></li>
+      <li class="st" hidden data-say="Step 2. Workforce without layoffs. Attrition 6, early retirement 4, pharmacy 3. 13 million."><span class="t">2 · Workforce, no layoffs</span><span class="f">$6M + $4M + $3M</span><span class="r tnum">$13M</span></li>
+      <li class="st" hidden data-say="Step 3. Revenue. Housing 3.2 plus online 2.8 is 6 million."><span class="t">3 · Revenue</span><span class="f">$3.2M + $2.8M</span><span class="r tnum">$6M</span></li>
+      <li class="st" hidden data-say="Step 4. Total. 30 million by year 3, 125 percent of the gap."><span class="t">4 · Total by year 3</span><span class="f">$11M + $13M + $6M vs. $24M</span><span class="r tnum">125%</span></li>
+      <li class="st" hidden data-say="Step 5. Stress test. At 80 percent delivery, the plan brings exactly 24 million. That's the line to watch."><span class="t">5 · At 80% delivery</span><span class="f">$30M × 80%</span><span class="r tnum">$24M</span></li>
+      <li class="st" hidden data-say="Step 6. Timing. Year 1 brings 13.2 million, 10.8 short. Year 2 brings 24.2 million, so the budget balances in time for the state's deadline, but with almost no room."><span class="t">6 · Timing</span><span class="f">Year 1: $13.2M, $10.8M short · Year 2: $24.2M, balanced with little room</span><span class="r tnum">On time</span></li>
+      <li class="st" hidden data-say="Step 7. The bridge. The 10.8 million shortfall plus 6 million of one-time costs, 4 for early retirement and 2 for refinancing, is about 16.8 million. Reserves fall from 90 to about 73 million, about 67 days, still above the 60-day floor."><span class="t">7 · The bridge</span><span class="f">$10.8M + $4M + $2M from reserves → $73M ≈ 67 days</span><span class="r tnum">≈$16.8M</span></li>
+      <li class="st" hidden data-say="Step 8. So what. Ridgeline can balance its budget on time with no layoffs. But year 2 has almost no room, and the full plan only covers the gap at 80 percent delivery or better. Track it monthly and keep targeted cuts as a backup, not the first move."><span class="t">8 · So what</span><span class="f">No layoffs needed, but year 2 is tight: track monthly, keep a backup</span><span class="r tnum">✓</span></li>
+    </ol>
+    <div class="row"><button class="btn primary small next" type="button">Reveal step 1 of 8</button><button class="btn small reset" type="button">Start over</button></div>
+  </div>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Plan savings by year vs. the $24M gap</span><span class="ex-ref">Exhibit 5 · $ millions</span></div>
+    <div class="hbar" id="ramp"></div>
+    <figcaption>Reserves cover year 1. Year 3's cushion can start rebuilding them.</figcaption>
+  </figure>
+  <div class="mc" data-answer="3">
+    <div class="mc-head"><p class="stem" data-say>Quick check: why not just spend the 24 million of reserves above the floor to cover one year, and decide later?</p></div>
+    <div class="opts">
+      <button class="opt" type="button" data-say>Because reserves can't be spent.</button>
+      <button class="opt" type="button" data-say>Because the state owns the reserves.</button>
+      <button class="opt" type="button" data-say>Because 24 million isn't enough for one year.</button>
+      <button class="opt" type="button" data-say>Because the gap comes back next year. Reserves are one-time money, so they should only bridge the time until recurring fixes kick in.</button>
+    </div>
+    <div class="why" hidden><p data-say>Spending reserves without a recurring plan just delays the layoffs a year, with thinner savings left to fall back on and a weaker credit rating.</p></div>
+  </div>
+  <div class="calcbox">
+    <h3>No-layoff plan calculator</h3>
+    <p class="sub">Starts with the finance team's plan. Change the assumptions, or add layoffs as a backup, and watch the reserves.</p>
+    <div class="cgrid">
+      <label for="gx-rate">New bond rate (%)<input id="gx-rate" type="number" min="0" max="6" step="0.25" value="4"></label>
+      <label for="gx-ret">Retiree health savings (%)<input id="gx-ret" type="number" min="0" max="100" step="5" value="25"></label>
+      <label for="gx-vac">Jobs left open through attrition<input id="gx-vac" type="number" min="0" step="10" value="60"></label>
+      <label for="gx-erip">Early retirement takers<input id="gx-erip" type="number" min="0" step="10" value="80"></label>
+      <label for="gx-occ">Housing occupancy (%)<input id="gx-occ" type="number" min="0" max="100" step="1" value="92"></label>
+      <label for="gx-online">Online master's students<input id="gx-online" type="number" min="0" step="50" value="400"></label>
+      <label for="gx-del">Share delivered (%)<input id="gx-del" type="number" min="0" max="100" step="5" value="100"></label>
+      <label for="gx-rif">Backup layoffs (positions)<input id="gx-rif" type="number" min="0" step="10" value="0"></label>
+    </div>
+    <div class="cout">
+      <div><div class="k">Year 3 savings</div><div class="v" id="gx-tot">–</div></div>
+      <div><div class="k">Share of gap</div><div class="v" id="gx-pct">–</div></div>
+      <div><div class="k">Year 1 bridge</div><div class="v" id="gx-br">–</div></div>
+      <div><div class="k">Days cash after</div><div class="v" id="gx-days">–</div></div>
+    </div>
+    <p class="cnote" id="gx-note" aria-live="polite"></p>
+    <div class="cbtns"><button class="btn small" type="button" id="gx-reset">Reset to the finance team's plan</button></div>
+  </div>
+</section>
+
+<!-- 09 PRIORITIZE -->
+<section class="step" id="prioritize">
+  <div class="sh"><span class="idx">09</span><h2>Sequence the levers</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>The president can't launch everything at once. Score these six options, including the layoffs, for ease and impact. Which three go first?</p>
+  </div>
+  <figure class="ex">
+    <div class="ex-h"><span class="ex-t">Lever map: ease × impact</span><span class="ex-ref">Exhibit 6 · Budget options</span></div>
+    <div class="seg" role="group" aria-label="Which scores to plot">
+      <button class="btn small" type="button" id="mMine" aria-pressed="true">Your scores</button>
+      <button class="btn small" type="button" id="mTeam" aria-pressed="false" disabled>Team's scores</button>
+    </div>
+    <div class="heat">
+      <div>
+        <div id="heatmap"></div>
+        <p class="mapnote" id="mapnote">Your dots appear here as you score each option.</p>
+      </div>
+      <div>
+        <p class="mapnote" style="margin:0 0 6px">Pick E (ease) and I (impact): 1 is low, 5 is high.</p>
+        <ul class="reg scorer" id="scorer"></ul>
+        <p class="mytop" id="mytop" aria-live="polite">Score all six to see your top three.</p>
+        <div class="ramp" aria-hidden="true">Score <i style="background:var(--h1)"></i><i style="background:var(--h2)"></i><i style="background:var(--h3)"></i><i style="background:var(--h4)"></i><i style="background:var(--h5)"></i> higher</div>
+      </div>
+    </div>
+    <figcaption>Score = ease × impact. In a public sector case, "ease" includes stakeholder support, not just effort.</figcaption>
+  </figure>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Score each with a one-line reason, then name your first three.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="120">2 min timer</button><button class="btn primary small reveal" type="button" id="rv-prio" aria-controls="a-prio" aria-expanded="false">Show the team's scores</button></div>
+  </div>
+  <div class="ans" id="a-prio" hidden>
+    <p class="who">The team's scores, with reasons</p>
+    <ul class="reg" id="teamlist"></ul>
+    <h3>Say it like this</h3>
+    <div class="script"><p data-say>"I'd start with three that save money fast and protect jobs. First, attrition: about 200 people leave each year on their own, so leaving 1 in 10 of those jobs open saves 6 million by year 3. Second, refinancing the callable bonds: it's a financial transaction, not a people decision, and it's worth 4 million a year within months. Third, the voluntary early retirement offer, which saves 4 million a year and lets people choose. Layoffs score high on impact but low on ease, so they're the backup, not the first move."</p></div>
+  </div>
+</section>
+
+<!-- 10 RECOMMEND -->
+<section class="step" id="recommend">
+  <div class="sh"><span class="idx">10</span><h2>The recommendation</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="iv">
+    <p class="who">Interviewer</p>
+    <p data-say>The president presents to the board next week, and the finance committee still favors layoffs. What's the recommendation?</p>
+  </div>
+  <div class="move">
+    <span class="lbl">Your move</span>
+    <p data-say>Lead with the answer. Then the plan, why it beats the layoffs, the bridge, and the backup.</p>
+    <div class="acts"><button class="btn small timer" type="button" data-secs="60">60s timer</button><button class="btn primary small reveal" type="button" aria-controls="a-rec" aria-expanded="false">Show a strong answer</button></div>
+  </div>
+  <div class="ans" id="a-rec" hidden>
+    <p class="who">Strong answer</p>
+    <div class="struct"><span>Answer</span><span>Plan</span><span>Why not layoffs</span><span>Bridge</span><span>Backup</span></div>
+    <div class="script">
+      <p data-say>"Ridgeline doesn't need the 240 layoffs. It can balance its budget within the state's two-year deadline with a 30 million dollar plan that protects jobs: about 11 million from managing the balance sheet, 13 million from workforce savings without layoffs, and 6 million of new revenue."</p>
+      <p data-say>"The layoffs look like 24 million, but after severance, unemployment costs, and lost tuition, they save only about 14.6 million in year 1 and 22 million after that. Instead, we refinance the callable bonds, move retirees 65 and older to a group Medicare Advantage plan, sign an energy savings contract, and lease the surplus land. On the workforce side, we leave about 1 in 10 vacancies open and offer voluntary early retirement."</p>
+      <p data-say>"We bridge year 1 with about 17 million from reserves, which keeps cash at about 67 days, above the board's 60-day floor. The risk is delivery: year 2 balances with almost no room, and below 80 percent delivery the plan falls short for good. So we set a trigger: if savings are more than 10 percent behind plan at month 12, we make targeted cuts in low-enrollment areas, sized to the shortfall, instead of 240 across the board. And we protect advising and financial aid, because they keep students enrolled."</p>
+    </div>
+    <h3>The roadmap</h3>
+    <div class="road">
+      <div class="phase" data-say><span class="d">Year 1</span><b>Stabilize</b><ul><li>Refinance the bonds.</li><li>Early retirement offer.</li><li>Re-bid the pharmacy contract.</li><li>Review every vacancy.</li><li>Bridge with about $17M of reserves.</li></ul></div>
+      <div class="phase" data-say><span class="d">Year 2</span><b>Balance</b><ul><li>Retiree health plan change.</li><li>Energy upgrades installed.</li><li>Housing to 92% full.</li><li>Budget balanced, on the state's deadline.</li></ul></div>
+      <div class="phase" data-say><span class="d">Year 3</span><b>Rebuild</b><ul><li>Online master's at 400 students.</li><li>Land lease income starts in full.</li><li>Use the $6M cushion to rebuild reserves.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 DRILLS -->
+<section class="step" id="drills">
+  <div class="sh"><span class="idx">11</span><h2>Bonus drills: public finance math</h2><button class="btn small listen" type="button">Listen</button></div>
+  <div class="drill">
+    <h3>Quick reps</h3>
+    <div class="reps">
+      <div class="rep"><p class="rq" data-say>1. A college refinances 80 million dollars of bonds from 5.5 percent to 4 percent. What's the yearly interest saving?</p><div class="acts"><button class="btn primary small reveal" type="button" aria-controls="q1" aria-expanded="false">Show answer</button></div>
+        <div class="ans" id="q1" hidden><div class="script"><p data-say>"1.2 million dollars. 80 million times 1.5 percent."</p></div></div></div>
+      <div class="rep"><p class="rq" data-say>2. A city spends 730 million dollars a year and has 150 million in reserves. How many days of cash is that?</p><div class="acts"><button class="btn primary small reveal" type="button" aria-controls="q2" aria-expanded="false">Show answer</button></div>
+        <div class="ans" id="q2" hidden><div class="script"><p data-say>"75 days. 730 divided by 365 is 2 million a day, and 150 divided by 2 is 75."</p></div></div></div>
+      <div class="rep"><p class="rq" data-say>3. An agency lays off 50 people who cost 90 thousand dollars each, with 4 months of severance. What does it save in year 1?</p><div class="acts"><button class="btn primary small reveal" type="button" aria-controls="q3" aria-expanded="false">Show answer</button></div>
+        <div class="ans" id="q3" hidden><div class="script"><p data-say>"3 million. 4.5 million of pay saved, minus 1.5 million of severance: 50 times 30 thousand."</p></div></div></div>
+      <div class="rep"><p class="rq" data-say>4. An early retirement offer pays 6 months' salary to staff earning 80 thousand. 30 accept, and 20 of their jobs aren't refilled. What's the one-time cost, the yearly saving, and the payback?</p><div class="acts"><button class="btn primary small reveal" type="button" aria-controls="q4" aria-expanded="false">Show answer</button></div>
+        <div class="ans" id="q4" hidden><div class="script"><p data-say>"1.2 million once, 30 times 40 thousand. It saves 1.6 million a year, 20 times 80 thousand. Payback is 9 months."</p></div></div></div>
+      <div class="rep"><p class="rq" data-say>5. In a group case, a faculty member says refinancing is "just accounting." How do you respond?</p><div class="acts"><button class="btn primary small reveal" type="button" aria-controls="q5" aria-expanded="false">Show answer</button></div>
+        <div class="ans" id="q5" hidden><div class="script"><p data-say>"It's real cash: 4 million less in interest every year. That's the same as 40 jobs at 100 thousand dollars, saved without a single layoff."</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 TEST -->
+<section class="step test" id="test">
+  <div class="sh"><span class="idx">12</span><h2>Practice test</h2><button class="btn small listen" type="button">Listen</button></div>
+  <p class="sub" data-say>Twelve multiple-choice questions on the Ridgeline case. Pick an answer to see the explanation.</p>
+  <div class="scorebar"><span class="score" id="score">0 / 0<small>answered 0 of 12</small></span><button class="btn small" type="button" id="resetTest">Reset test</button></div>
+  <div id="testq"></div>
+  <div class="done" id="done" hidden></div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>An original practice case written in the style of Deloitte Government and Public Services (GPS) case interviews. It isn't a Deloitte case: the university and all figures are invented, and it isn't financial advice. Interview format notes come from a public prep guide, <a href="https://www.hackingthecaseinterview.com/pages/deloitte-gps-interview" target="_blank" rel="noopener">Hacking the Case Interview</a>. This page isn't made by or affiliated with Deloitte.</p>
+    <p>Night-before tip: be ready to say why the layoffs save less than they look, and name the three buckets that replace them: balance sheet, workforce without layoffs, and new revenue.</p>
+  </div>
+</footer>
+<div id="tip" hidden role="tooltip"></div>
+<script>
+(function(){
+  "use strict";
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const NS="http://www.w3.org/2000/svg";
+  const svgEl=(t,a={})=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const LET="ABCD";
+
+  /* ---------- tooltip ---------- */
+  const tip=$("#tip");
+  function showTip(el,x,y){tip.textContent=el.getAttribute("data-tip");tip.hidden=false;
+    const w=tip.offsetWidth,h=tip.offsetHeight;let L=x+12,T=y-h-10;
+    if(L+w>innerWidth-8)L=x-w-12; if(T<8)T=y+14; tip.style.left=Math.max(8,L)+"px";tip.style.top=T+"px";}
+  document.addEventListener("pointermove",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t)showTip(t,e.clientX,e.clientY);else tip.hidden=true;});
+  document.addEventListener("focusin",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t){const r=t.getBoundingClientRect();showTip(t,r.left+r.width/2,r.top);}});
+  document.addEventListener("focusout",()=>{tip.hidden=true;});
+  addEventListener("scroll",()=>{tip.hidden=true;},{passive:true});
+
+  /* ---------- reveal toggles ---------- */
+  $$(".reveal").forEach(b=>{const t=document.getElementById(b.getAttribute("aria-controls"));const show=b.textContent;
+    const hide=show.startsWith("Show as")?"Hide table":"Hide";
+    b.addEventListener("click",()=>{const open=t.hidden;t.hidden=!open;b.setAttribute("aria-expanded",String(open));b.textContent=open?hide:show;});});
+
+  /* ---------- timers ---------- */
+  let actx=null;
+  function beep(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.frequency.value=880;g.gain.setValueAtTime(.0001,actx.currentTime);g.gain.exponentialRampToValueAtTime(.2,actx.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+.5);o.connect(g).connect(actx.destination);o.start();o.stop(actx.currentTime+.55);}catch(e){}}
+  $$(".timer").forEach(b=>{const secs=+b.dataset.secs,label=b.textContent;let id=null,left=0;
+    const fmt=s=>Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+    b.addEventListener("click",()=>{
+      if(id){clearInterval(id);id=null;b.textContent=label;b.setAttribute("aria-pressed","false");return;}
+      try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();}catch(e){}
+      left=secs;b.textContent=fmt(left)+" · stop";b.setAttribute("aria-pressed","true");
+      id=setInterval(()=>{left--;if(left<=0){clearInterval(id);id=null;b.textContent="Time. Answer now";b.setAttribute("aria-pressed","false");beep();setTimeout(()=>{if(!id)b.textContent=label;},4000);return;}b.textContent=fmt(left)+" · stop";},1000);
+    });});
+
+  /* ---------- steppers ---------- */
+  $$(".stepper").forEach(s=>{const steps=$$(".st",s),next=$(".next",s),reset=$(".reset",s);let i=0;
+    const upd=()=>{next.hidden=i>=steps.length;next.textContent="Reveal step "+(i+1)+" of "+steps.length;};
+    next.addEventListener("click",()=>{if(i<steps.length){steps[i].hidden=false;i++;upd();}});
+    reset.addEventListener("click",()=>{steps.forEach(x=>x.hidden=true);i=0;upd();});upd();});
+
+
+  /* ---------- chart builders ---------- */
+  function niceMax(m){const steps=[1,1.5,2,2.5,3,4,5,6,8,10,12,15,20,25,30,40,50,60,80,100,120,150,200,250,300,400,500,600,800,1000,1200,1500,2000];for(const s of steps)if(s>=m)return s;return Math.ceil(m/500)*500;}
+  function roundTop(x,y,w,h,r){r=Math.min(r,h,w/2);return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`;}
+  function multiples(el,Q,SER){
+    SER.forEach(s=>{
+      const f=s.f||(v=>String(v)),n=s.v.length,last=n-1;
+      const card=document.createElement("div");card.className="mini";
+      card.innerHTML=`<div class="nm">${s.k}</div><div class="ch">${f(s.v[0])} → ${f(s.v[last])}</div>`;
+      const W=200,H=104,top=18,bot=20,pl=4,pr=4,ph=H-top-bot,band=(W-pl-pr)/n,bw=Math.min(22,band*.58),max=niceMax(Math.max(...s.v)*1.12);
+      const svg=svgEl("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":`${s.k}: ${s.v.map((v,i)=>Q[i]+" "+f(v)).join(", ")}`});
+      s.v.forEach((v,i)=>{const cx=pl+band*i+band/2,h=Math.max(1,v/max*ph),x=cx-bw/2,y=top+ph-h;
+        svg.appendChild(svgEl("path",{d:roundTop(x,y,bw,h,4),fill:"var(--s1)"}));
+        if(i===0||i===last){const edge=n>6,tx=edge?(i===0?Math.max(1,x):Math.min(W-1,x+bw)):cx,an=edge?(i===0?"start":"end"):"middle";const t=svgEl("text",{x:tx,y:y-5,"text-anchor":an,"font-size":"10.5","font-weight":"600",fill:"var(--fg-2)"});t.textContent=f(v);svg.appendChild(t);}
+        const q=svgEl("text",{x:cx,y:H-5,"text-anchor":"middle","font-size":n>5?"8.5":"9.5",fill:"var(--muted)"});q.textContent=Q[i];svg.appendChild(q);
+        svg.appendChild(svgEl("rect",{x:pl+band*i,y:0,width:band,height:H,fill:"transparent","data-tip":`${s.k} · ${Q[i]}: ${f(v)}`}));
+      });
+      svg.insertBefore(svgEl("line",{x1:0,x2:W,y1:top+ph+.5,y2:top+ph+.5,stroke:"var(--axis)","stroke-width":"1"}),svg.firstChild);
+      card.appendChild(svg);el.appendChild(card);
+    });
+  }
+  function multTable(el,Q,SER){
+    el.innerHTML=`<table><thead><tr><th>Measure</th>${Q.map(q=>`<th class="n">${q}</th>`).join("")}</tr></thead><tbody>${SER.map(s=>`<tr><td>${s.k}</td>${s.v.map(v=>`<td class="n">${(s.f||String)(v)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+  }
+  function axis(el,o){const ax=document.createElement("div");ax.className="axis";
+    ax.innerHTML=`<div></div><div class="ticks">${o.ticks.map(v=>`<span style="left:${v/o.max*100}%">${o.tick(v)}</span>`).join("")}</div>`;el.appendChild(ax);
+    if(o.ref&&o.ref.note){const p=document.createElement("p");p.className="tolnote";p.textContent=o.ref.note;el.appendChild(p);}}
+  /* one bar per row: rows {d,t,v,lab,tip,st:{bad,txt}} */
+  function hbar(el,rows,o){
+    rows.forEach(r=>{const row=document.createElement("div");row.className="hrow";const w=r.v/o.max*100;
+      row.innerHTML=`<div class="hlab"><b>${r.d}</b>${r.t?`<span>${r.t}</span>`:""}${r.st?`<span class="status ${r.st.bad?"bad":"ok"}">${r.st.bad?"▲ ":"✓ "}${r.st.txt}</span>`:""}</div>
+        <div class="track" tabindex="0" data-tip="${r.tip||r.d+": "+r.lab}"><div class="bar" style="width:${Math.max(.4,w)}%"></div><span class="bval" style="left:${w}%">${r.lab}</span>${o.ref?`<div class="tol" style="left:${o.ref.at/o.max*100}%"></div>`:""}</div>`;
+      el.appendChild(row);});
+    axis(el,o);
+  }
+  /* stacked segments, total named in the label: rows {n,d,seg:[[v,cls,tip]]} */
+  function stack(el,rows,o){
+    rows.forEach(r=>{const row=document.createElement("div");row.className="hrow";let x=0,bars="";
+      r.seg.forEach(([v,c,t],i)=>{const left=x/o.max*100,w=v/o.max*100;
+        bars+=`<div class="bar ${c}" tabindex="0" data-tip="${t}" style="left:calc(${left}% + ${i?2:0}px);width:calc(${w}% - ${i?2:0}px);border-radius:${i===r.seg.length-1?"0 4px 4px 0":"0"}"></div>`;x+=v;});
+      row.innerHTML=`<div class="hlab"><b>${r.n}</b><span>${r.d}</span></div><div class="track">${bars}${o.ref?`<div class="tol" style="left:${o.ref.at/o.max*100}%"></div>`:""}</div>`;
+      el.appendChild(row);});
+    axis(el,o);
+  }
+  /* waterfall: rows {n,d,total} or {n,d,delta}; totals neutral, ups blue, downs orange */
+  function waterfall(el,rows,o){let run=0;
+    rows.forEach(r=>{const row=document.createElement("div");row.className="hrow";let bar,lab,tip;
+      if(r.total!==undefined){run=r.total;bar=`<div class="bar b3" style="width:${r.total/o.max*100}%"></div>`;lab=`<span class="bval" style="left:${r.total/o.max*100}%">${o.fmt(r.total)}</span>`;tip=`${r.n}: ${o.fmt(r.total)}`;}
+      else{const a=Math.min(run,run+r.delta),b=Math.max(run,run+r.delta);
+        bar=`<div class="bar ${r.delta<0?"b2":""}" style="left:${a/o.max*100}%;width:${(b-a)/o.max*100}%;border-radius:3px"></div>`;
+        lab=`<span class="bval" style="left:${b/o.max*100}%">${r.delta<0?"−":"+"}${o.fmt(Math.abs(r.delta))}</span>`;tip=`${r.n}: ${r.delta<0?"−":"+"}${o.fmt(Math.abs(r.delta))}`;run+=r.delta;}
+      row.innerHTML=`<div class="hlab"><b>${r.n}</b><span>${r.d}</span></div><div class="track" tabindex="0" data-tip="${tip}">${bar}${lab}</div>`;
+      el.appendChild(row);});
+    axis(el,o);
+  }
+
+  /* ---------- heat map you score ---------- */
+  function heatScorer(HM){
+    const band=s=>s>=20?5:s>=15?4:s>=9?3:s>=5?2:1;
+    const C=54,ox=84,oy=8,G=C*5,HW=ox+G+8,HH=oy+G+52;
+    const hs=svgEl("svg",{viewBox:`0 0 ${HW} ${HH}`,role:"img","aria-label":"Heat map"});
+    for(let X=1;X<=5;X++)for(let Y=1;Y<=5;Y++)
+      hs.appendChild(svgEl("rect",{x:ox+(X-1)*C+1,y:oy+(5-Y)*C+1,width:C-2,height:C-2,rx:3,fill:`var(--h${band(X*Y)})`}));
+    for(let k=1;k<=5;k++){
+      const t=svgEl("text",{x:ox+(k-.5)*C,y:oy+G+15,"text-anchor":"middle","font-size":"11",fill:"var(--fg-2)"});t.textContent=k;hs.appendChild(t);
+      if(HM.lx[k-1]){const t2=svgEl("text",{x:ox+(k-.5)*C,y:oy+G+28,"text-anchor":"middle","font-size":"9.5",fill:"var(--muted)"});t2.textContent=HM.lx[k-1];hs.appendChild(t2);}
+      const u=svgEl("text",{x:ox-8,y:oy+(5-k+.5)*C+4,"text-anchor":"end","font-size":"11",fill:"var(--fg-2)"});u.textContent=k;hs.appendChild(u);
+      if(HM.ly[k-1]){const u2=svgEl("text",{x:ox-20,y:oy+(5-k+.5)*C+4,"text-anchor":"end","font-size":"9.5",fill:"var(--muted)"});u2.textContent=HM.ly[k-1];hs.appendChild(u2);}
+    }
+    const xt=svgEl("text",{x:ox+G/2,y:oy+G+46,"text-anchor":"middle","font-size":"11","font-weight":"600",fill:"var(--fg)"});xt.textContent=HM.xName+" →";hs.appendChild(xt);
+    const yt=svgEl("text",{x:9,y:oy+G/2,"text-anchor":"middle","font-size":"11","font-weight":"600",fill:"var(--fg)",transform:`rotate(-90 9 ${oy+G/2})`});yt.textContent=HM.yName+" →";hs.appendChild(yt);
+    const dots=svgEl("g");hs.appendChild(dots);$("#heatmap").appendChild(hs);
+    const IT=HM.items,xn=HM.xName.toLowerCase(),yn=HM.yName.toLowerCase();
+    const opt=lab=>`<option value="">${lab}</option>`+[1,2,3,4,5].map(v=>`<option value="${v}">${v}</option>`).join("");
+    $("#scorer").innerHTML=IT.map(r=>`<li><span class="id">${r.id}</span><span class="nm">${r.n}</span><span class="pick"><select id="x-${r.id}" aria-label="${r.id} ${xn}, 1 to 5">${opt(HM.xs)}</select><select id="y-${r.id}" aria-label="${r.id} ${yn}, 1 to 5">${opt(HM.ys)}</select><span class="sc" id="s-${r.id}">–</span></span></li>`).join("");
+    const rank=(a,b)=>b.x*b.y-a.x*a.y||b.y-a.y;
+    $("#teamlist").innerHTML=[...IT].sort(rank).map(r=>`<li data-say="${r.id}. ${r.n}. ${HM.xName} ${r.x}, ${yn} ${r.y}, score ${r.x*r.y}. ${r.w}"><span class="id">${r.id}</span><span class="nm"><b>${r.n}</b><span class="w">${r.w}</span></span><span class="sc">${r.x}×${r.y} = ${r.x*r.y}</span></li>`).join("");
+    let mode="mine";
+    const mine=()=>IT.map(r=>({id:r.id,n:r.n,x:+$("#x-"+r.id).value,y:+$("#y-"+r.id).value})).filter(r=>r.x&&r.y);
+    const offsets=n=>n<=1?[[0,0]]:n===2?[[-12,0],[12,0]]:n<=4?[[-12,-11],[12,-11],[-12,11],[12,11]]:[[-15,-11],[0,-11],[15,-11],[-15,11],[0,11],[15,11]];
+    function plot(list){
+      while(dots.firstChild)dots.removeChild(dots.firstChild);
+      const cells={};list.forEach(r=>{const k=r.x+"-"+r.y;(cells[k]=cells[k]||[]).push(r);});
+      Object.values(cells).forEach(arr=>{const off=offsets(arr.length),big=arr.length===1,rad=big?14:arr.length<=4?10:8;
+        arr.forEach((r,j)=>{const cx=ox+(r.x-.5)*C+off[j][0],cy=oy+(5-r.y+.5)*C+off[j][1];
+          const g=svgEl("g",{tabindex:"0","data-tip":`${r.id} · ${r.n}: ${xn} ${r.x}, ${yn} ${r.y}, score ${r.x*r.y}`});
+          g.appendChild(svgEl("circle",{cx,cy,r:rad+2,fill:"var(--surface)"}));
+          g.appendChild(svgEl("circle",{cx,cy,r:rad,fill:"var(--dot)"}));
+          const t=svgEl("text",{x:cx,y:cy+(big?4:3),"text-anchor":"middle","font-size":big?"11":"8.5","font-weight":"600",fill:"var(--dot-ink)"});t.textContent=r.id;g.appendChild(t);
+          dots.appendChild(g);});});
+      hs.setAttribute("aria-label",`Heat map of ${xn} by ${yn}, ${mode==="team"?"team's scores":"your scores"}. `+(list.length?list.map(r=>`${r.id}: ${xn} ${r.x}, ${yn} ${r.y}`).join(". "):"Nothing scored yet."));
+    }
+    function render(){
+      const m=mine();
+      IT.forEach(r=>{const x=+$("#x-"+r.id).value,y=+$("#y-"+r.id).value;$("#s-"+r.id).textContent=x&&y?"= "+x*y:"–";});
+      const top=$("#mytop");
+      if(!m.length)top.textContent=`Score all ${IT.length} to see your top three.`;
+      else if(m.length<IT.length)top.textContent=`Scored ${m.length} of ${IT.length}. Score all ${IT.length} to see your top three.`;
+      else top.textContent="Your top three by score: "+[...m].sort(rank).slice(0,3).map(r=>`${r.id} (${r.x*r.y})`).join(", ")+".";
+      const note=$("#mapnote");
+      if(mode==="team"){plot(IT);note.textContent="Showing the team's scores. Switch back to compare with yours.";}
+      else{plot(m);note.textContent=m.length?"Showing your scores. Shared cells show dots side by side.":"Your dots appear here as you score each one.";}
+    }
+    function setMode(v){mode=v;$("#mMine").setAttribute("aria-pressed",String(v==="mine"));$("#mTeam").setAttribute("aria-pressed",String(v==="team"));render();}
+    $("#scorer").addEventListener("change",()=>{if(mode!=="mine")setMode("mine");else render();});
+    $("#mMine").addEventListener("click",()=>setMode("mine"));
+    $("#mTeam").addEventListener("click",()=>{if(!$("#mTeam").disabled)setMode("team");});
+    $("#rv-prio").addEventListener("click",()=>{$("#mTeam").disabled=false;setMode($("#a-prio").hidden?"mine":"team");});
+    render();
+  }
+
+  const PAGEKEY="ridgeline";
+  const fM=v=>(v<0?"−":"")+"$"+(Math.round(Math.abs(v)*10)/10).toFixed(1)+"M";
+  const fm=v=>"$"+(v%1?v.toFixed(1):v)+"M";
+  hbar($("#rev"),[
+    {d:"Net tuition and fees",t:"After the university's own aid",v:190,lab:"$190M"},
+    {d:"State appropriation",t:"Flat for five years",v:110,lab:"$110M"},
+    {d:"Housing and dining",t:"4,000 beds, 82% full",v:46,lab:"$46M"},
+    {d:"Grants and other",t:"Research, gifts, fees",v:30,lab:"$30M"},
+  ],{max:320,ticks:[0,80,160,240,320],tick:v=>"$"+v+"M"});
+  hbar($("#cost"),[
+    {d:"Salaries and benefits",t:"65% of spending · 2,600 people",v:260,lab:"$260M"},
+    {d:"Facilities and utilities",t:"Buildings, energy, upkeep",v:52,lab:"$52M"},
+    {d:"Supplies and services",t:"Software, contracts, materials",v:48,lab:"$48M"},
+    {d:"Debt service",t:"Payments on past construction",v:24,lab:"$24M"},
+    {d:"Other",t:"Travel, insurance, misc.",v:16,lab:"$16M"},
+  ],{max:320,ticks:[0,80,160,240,320],tick:v=>"$"+v+"M"});
+
+  const Q=["2020","2021","2022","2023","2024","2025"];
+  const SER=[
+    {k:"Enrollment",v:[13050,12850,12600,12400,12200,12000],f:v=>v.toLocaleString("en-US")},
+    {k:"Discount rate",v:[28,29,30,32,33,34],f:v=>v+"%"},
+    {k:"State appropriation",v:[110,108,110,111,110,110],f:v=>"$"+v+"M"},
+    {k:"Benefits per employee",v:[24.0,25.4,26.9,28.5,30.2,32.0],f:v=>"$"+v.toFixed(1)+"K"},
+  ];
+  multiples($("#mult"),Q,SER);multTable($("#t-ex1"),Q,SER);
+
+  /* Exhibit 2: what layoffs really save in year 1 */
+  waterfall($("#lay"),[
+    {n:"Headline savings",d:"240 jobs × $100K",total:24},
+    {n:"Severance",d:"3 months' pay, one time",delta:-6},
+    {n:"Unemployment insurance",d:"One time",delta:-1.5},
+    {n:"Lost tuition",d:"120 fewer students, every year",delta:-1.9},
+    {n:"Year 1 net savings",d:"About 60% of the gap",total:14.6},
+  ],{max:30,ticks:[0,6,12,18,24,30],tick:v=>"$"+v+"M",fmt:fm});
+
+  /* Exhibit 4: the no-layoff menu */
+  hbar($("#levers"),[
+    {d:"Leave jobs open through attrition",t:"Workforce · 20 a year, about 1 in 10 vacancies",v:6,lab:"$6.0M"},
+    {d:"Refinance the callable bonds",t:"Balance sheet · $200M from 6% to 4%",v:4,lab:"$4.0M"},
+    {d:"Voluntary early retirement",t:"Workforce · 80 take it, 40 jobs not refilled",v:4,lab:"$4.0M"},
+    {d:"Fill empty housing",t:"Revenue · 82% → 92% occupancy",v:3.2,lab:"$3.2M"},
+    {d:"Retiree health plan change",t:"Balance sheet · Medicare Advantage for 65+",v:3,lab:"$3.0M"},
+    {d:"Re-bid the pharmacy contract",t:"Workforce · employee drug benefit",v:3,lab:"$3.0M"},
+    {d:"Online master's degrees",t:"Revenue · 400 students",v:2.8,lab:"$2.8M"},
+    {d:"Energy savings contract",t:"Balance sheet · repaid from savings",v:2.5,lab:"$2.5M"},
+    {d:"Lease the surplus land",t:"Balance sheet · 40 acres",v:1.5,lab:"$1.5M"},
+  ],{max:8,ticks:[0,2,4,6,8],tick:v=>"$"+v+"M"});
+
+  /* Exhibit 5: ramp by year */
+  hbar($("#ramp"),[
+    {d:"Year 1",t:"Refinancing, early retirement, pharmacy start first",v:13.2,lab:"$13.2M",st:{bad:true,txt:"$10.8M short: reserves bridge it"}},
+    {d:"Year 2",t:"Retiree health, energy, housing kick in",v:24.2,lab:"$24.2M",st:{bad:false,txt:"Balanced, barely"}},
+    {d:"Year 3",t:"Online and land lease at full speed",v:30,lab:"$30.0M",st:{bad:false,txt:"$6M cushion"}},
+  ],{max:36,ticks:[0,6,12,18,24,30,36],tick:v=>"$"+v+"M"});
+
+  /* No-layoff plan calculator */
+  const GX=["rate","ret","vac","erip","occ","online","del","rif"],GXD={rate:4,ret:25,vac:60,erip:80,occ:92,online:400,del:100,rif:0};
+  const GAP=24,CASH=90,DAY=400/365,RIFNET=0.1-1.9/240,RIFONE=7.5/240;
+  function gxCalc(){const g=k=>{const x=parseFloat($("#gx-"+k).value);return isNaN(x)?0:x;},cl=(v,a,b)=>Math.min(b,Math.max(a,v));
+    const refi=Math.max(0,200*(6-g("rate"))/100),ret=12*cl(g("ret"),0,100)/100,vac=g("vac")*0.1,erip=g("erip")*0.05,
+      hous=Math.max(0,cl(g("occ"),0,100)-82)/100*4000*0.008,onl=g("online")*0.007,fixed=3+2.5+1.5;
+    const base=(refi+ret+vac+erip+hous+onl+fixed)*cl(g("del"),0,100)/100,rif=g("rif")*RIFNET,tot=base+rif;
+    const y1=base*0.44+rif,y2=base*24.2/30+rif,bridge=Math.max(0,GAP-y1);
+    const once=(refi>0?2:0)+g("erip")*0.05+g("rif")*RIFONE,used=bridge+once,days=Math.max(0,(CASH-used)/DAY);
+    $("#gx-tot").textContent=fM(tot);$("#gx-pct").textContent=Math.round(tot/GAP*100)+"%";
+    $("#gx-br").textContent=fM(bridge);$("#gx-days").textContent=Math.round(days)+" days";
+    const y3=Math.abs(tot-GAP)<0.05?"Just closes the gap by year 3, with nothing to spare.":tot>GAP?`Closes the gap by year 3 with ${fM(tot-GAP)} to spare.`:`Still ${fM(GAP-tot)} short by year 3.`;
+    const d2=`Year 2 brings ${fM(y2)}: ${y2>=GAP-0.05?"balanced on the state's deadline":"short of the state's deadline"}.`;
+    const res=`Reserves fund ${fM(used)} (bridge plus one-time costs) and end near ${Math.round(days)} days, ${days>=60?"above":"below"} the 60-day floor.`;
+    const tip=g("rif")>0?` Each backup layoff saves about $92K a year after lost tuition and costs about $31K up front.`:"";
+    $("#gx-note").textContent=`${y3} ${d2} ${res}${tip}`;}
+  GX.forEach(k=>$("#gx-"+k).addEventListener("input",gxCalc));
+  $("#gx-reset").addEventListener("click",()=>{GX.forEach(k=>$("#gx-"+k).value=GXD[k]);gxCalc();});
+  gxCalc();
+
+  heatScorer({xName:"Ease",yName:"Impact",xs:"E",ys:"I",lx:["Hard","","Medium","","Easy"],ly:["Small","","Medium","","Large"],items:[
+    {id:"A",n:"Leave jobs open through attrition",x:4,y:4,w:"About 200 people leave each year anyway. Holding 1 in 10 of those jobs saves $6M by year 3, with no layoffs."},
+    {id:"B",n:"Refinance the callable bonds",x:5,y:3,w:"A financial transaction, not a people decision. $4M a year within months, and the $2M cost pays back in 6."},
+    {id:"C",n:"Voluntary early retirement offer",x:4,y:3,w:"$4M a year, and people choose it. Costs $4M once, so it pays back in a year."},
+    {id:"D",n:"Lay off 240 staff",x:2,y:5,w:"The biggest single number, but $7.5M up front, union rules, lost advisors, and only $14.6M in year 1."},
+    {id:"E",n:"Change the retiree health plan",x:2,y:3,w:"Real recurring money, but retirees and legislators will push back. Needs careful communication."},
+    {id:"F",n:"Energy savings contract",x:3,y:2,w:"No cash up front and it shrinks the repair backlog, but buying and installing takes about a year."},
+  ]});
+
+  const TEST=[
+    {q:"What makes Ridgeline's deficit structural?",o:["It happened once","It comes back every year because costs grow faster than revenue","The state caused it","It's under 10% of the budget"],a:1,w:"It grew from $8M to $16M to $24M. Only recurring fixes close it."},
+    {q:"What do the 240 layoffs actually save in year 1?",o:["$24M","About $22.1M","About $14.6M","About $7.5M"],a:2,w:"$24M − $6M severance − $1.5M unemployment − $1.9M lost tuition."},
+    {q:"Where does the $1.9M of lost tuition come from?",o:["Higher tuition","120 fewer students staying, at $15,840 each","State cuts","Severance"],a:1,w:"Cutting advisors hurts retention, and every student who leaves takes tuition with them."},
+    {q:"Refinancing $200M of bonds from 6% to 4% saves…",o:["$2M a year","$4M a year","$8M a year","$12M once"],a:1,w:"$200M × 2%. The $2M cost pays back in about 6 months."},
+    {q:"Why lease the land instead of selling it for $20M?",o:["Leasing raises more in total right away","The gap is recurring, so a $1.5M yearly lease beats a one-time sale","Universities can't sell land","The lease avoids taxes"],a:1,w:"One-time money can only buy time. Sale money is better used for debt or the bridge."},
+    {q:"With $90M of reserves and $400M of yearly spending, how many days of cash?",o:["About 22","About 60","About 82","About 120"],a:2,w:"$400M ÷ 365 ≈ $1.1M a day. $90M ÷ $1.1M ≈ 82."},
+    {q:"How much can reserves fall before hitting the 60-day floor?",o:["About $6M","About $24M","About $66M","About $90M"],a:1,w:"60 days × $1.1M ≈ $66M, so about $24M of room."},
+    {q:"What does the no-layoff plan total by year 3?",o:["$11M","$24M","$30M, 125% of the gap","$46M"],a:2,w:"$11M balance sheet + $13M workforce + $6M revenue."},
+    {q:"If only 80% of the plan is delivered, it brings…",o:["$18M","$24M, exactly the gap","$30M","$36M"],a:1,w:"80% × $30M. That's the line to track."},
+    {q:"Why can't reserves alone fix the gap?",o:["They're too small","They're one-time money, and the gap returns every year","The board can't touch them","They earn interest"],a:1,w:"Reserves bridge the ramp-up. They don't replace recurring fixes."},
+    {q:"What's an energy savings performance contract?",o:["A higher utility bill","A company funds building upgrades and is repaid from the energy saved","A state grant","A tax on energy use"],a:1,w:"No cash up front, and it shrinks the deferred maintenance backlog."},
+    {q:"Which is the strongest opening line for your recommendation?",o:["Layoffs are bad for morale.","Ridgeline doesn't need the 240 layoffs: a $30M plan from the balance sheet, attrition, and revenue balances the budget in two years.","Let's sell the land.","We need more data."],a:1,w:"Answer first, then the three buckets, the bridge, and the backup."},
+  ];
+  const testq=$("#testq");
+  TEST.forEach((t,n)=>{const d=document.createElement("div");d.className="mc";d.dataset.answer=t.a;d.dataset.group="test";
+    d.innerHTML=`<div class="mc-head"><p class="stem" data-say="Question ${n+1}. ${t.q.replace(/"/g,"&quot;")}"><span class="qn">Q${n+1}</span>${t.q}</p><button class="btn small qlisten" type="button" aria-label="Listen to question ${n+1}">Listen</button></div>
+      <div class="opts">${t.o.map(o=>`<button class="opt" type="button" data-say="${o.replace(/"/g,"&quot;")}">${o}</button>`).join("")}</div>
+      <div class="why" hidden><p data-say="${t.w.replace(/"/g,"&quot;")}">${t.w}</p></div>`;
+    testq.appendChild(d);});
+
+  /* ---------- multiple choice engine ---------- */
+  function setupMC(mc){const opts=$$(".opt",mc);
+    opts.forEach((o,i)=>{if(!o.querySelector(".L")){const x=document.createElement("span");x.className="x";while(o.firstChild)x.appendChild(o.firstChild);
+        const L=document.createElement("span");L.className="L";L.textContent=LET[i];o.append(L,x);
+        o.dataset.say=LET[i]+". "+(o.dataset.say||x.textContent);}
+      o.addEventListener("click",()=>answer(mc,i));});}
+  function answer(mc,i){if(mc.dataset.done)return;mc.dataset.done="1";const a=+mc.dataset.answer,opts=$$(".opt",mc);
+    opts.forEach((o,k)=>{o.disabled=true;if(k===a){o.classList.add("right");o.insertAdjacentHTML("beforeend",`<span class="tag">✓ ${k===i?"Correct":"Answer"}</span>`);}
+      else if(k===i){o.classList.add("wrong");o.insertAdjacentHTML("beforeend",`<span class="tag">✕ Your pick</span>`);}});
+    mc.dataset.correct=String(i===a);$(".why",mc).hidden=false;if(mc.dataset.group==="test")score();}
+  function resetMC(mc){delete mc.dataset.done;delete mc.dataset.correct;$$(".opt",mc).forEach(o=>{o.disabled=false;o.classList.remove("right","wrong");const t=$(".tag",o);if(t)t.remove();});$(".why",mc).hidden=true;}
+  $$(".mc").forEach(setupMC);
+  function score(){const qs=$$('.mc[data-group="test"]'),done=qs.filter(q=>q.dataset.done),right=done.filter(q=>q.dataset.correct==="true").length;
+    $("#score").innerHTML=`${right} / ${done.length}<small>answered ${done.length} of ${qs.length}</small>`;
+    const box=$("#done");if(done.length===qs.length){box.hidden=false;
+      box.innerHTML=typeof DONE_MSG==="function"?DONE_MSG(right,qs.length):`<b>${right} of ${qs.length}.</b> `+(right>=11?"You're ready. Run the recommendation in step 09 out loud once more and get some sleep.":right>=8?"Solid. Re-read the explanations you missed, then run steps 04 and 09 out loud.":"Go back to the primer in step 01, then retake the test. The terms will stick on the second pass.");}
+    else box.hidden=true;}
+  $("#resetTest").addEventListener("click",()=>{$$('.mc[data-group="test"]').forEach(resetMC);score();$("#test").scrollIntoView();});
+  score();
+
+  /* ---------- read aloud, with a voice menu ---------- */
+  const synth=window.speechSynthesis,rateSel=$("#rate"),vSel=$("#voicePick");
+  try{const r=localStorage.getItem(PAGEKEY+"-rate");if(r)rateSel.value=r;}catch(e){}
+  rateSel.addEventListener("change",()=>{try{localStorage.setItem(PAGEKEY+"-rate",rateSel.value);}catch(e){}});
+  let speakingBtn=null,voice=null,voices=[];
+  const vrank=v=>(/natural|neural/i.test(v.name)?0:/premium/i.test(v.name)?1:/enhanced/i.test(v.name)?2:/google/i.test(v.name)?3:4)+(/^en[-_]US/i.test(v.lang)?0:.5);
+  function loadVoices(){
+    if(!synth)return;
+    voices=synth.getVoices().filter(v=>/^en/i.test(v.lang)).sort((a,b)=>vrank(a)-vrank(b)||a.name.localeCompare(b.name));
+    if(!vSel)return;
+    let saved=null;try{saved=localStorage.getItem(PAGEKEY+"-voice");}catch(e){}
+    vSel.innerHTML=voices.length?voices.map((v,i)=>`<option value="${i}">${v.name.replace(/[<>&"]/g,"")}${vrank(v)<2?" (natural)":""}</option>`).join(""):'<option value="">Browser default</option>';
+    let idx=voices.findIndex(v=>v.name===saved);if(idx<0)idx=0;
+    if(voices.length)vSel.value=String(idx);voice=voices[idx]||null;
+  }
+  if(vSel)vSel.addEventListener("change",()=>{voice=voices[+vSel.value]||null;try{localStorage.setItem(PAGEKEY+"-voice",voice?voice.name:"");}catch(e){}});
+  loadVoices();
+  if(synth&&"onvoiceschanged" in synth)synth.addEventListener("voiceschanged",loadVoices);
+  function textOf(el){return(el.getAttribute("data-say")||el.innerText||"").replace(/\s+/g," ").trim();}
+  function visible(el){return!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);}
+  function stop(){if(synth)synth.cancel();if(speakingBtn){speakingBtn.textContent=speakingBtn.dataset.label;speakingBtn.setAttribute("aria-pressed","false");speakingBtn=null;}}
+  function speakChunks(btn,chunks){
+    if(!synth||!chunks.length)return;
+    if(speakingBtn===btn){stop();return;}
+    stop();
+    speakingBtn=btn;btn.dataset.label=btn.dataset.label||btn.textContent;btn.textContent="Stop";btn.setAttribute("aria-pressed","true");
+    chunks.forEach((c,i)=>{const u=new SpeechSynthesisUtterance(c);u.rate=+rateSel.value;if(voice){u.voice=voice;u.lang=voice.lang;}else u.lang="en-US";
+      if(i===chunks.length-1)u.onend=()=>{if(speakingBtn===btn)stop();};synth.speak(u);});
+  }
+  function speak(btn,els){const chunks=[];els.filter(visible).forEach(el=>{textOf(el).split(/(?<=[.?!])\s+(?=[A-Z0-9"“])/).forEach(c=>{if(c)chunks.push(c);});});speakChunks(btn,chunks);}
+  if(!synth){$$(".listen,.qlisten").forEach(b=>b.hidden=true);$(".speed").hidden=true;const vb=$(".voicebar");if(vb)vb.hidden=true;}
+  else{
+    $$(".listen").forEach(b=>{b.dataset.label=b.textContent;b.addEventListener("click",()=>{const sec=b.closest("section");speak(b,$$("[data-say]",sec).filter(el=>!el.parentElement.closest("[data-say]")));});});
+    document.addEventListener("click",e=>{const b=e.target.closest(".qlisten");if(!b)return;const mc=b.closest(".mc");speak(b,$$("[data-say]",mc).filter(el=>!el.parentElement.closest("[data-say]")));});
+    const vt=$("#voiceTest");if(vt){vt.dataset.label=vt.textContent;vt.addEventListener("click",()=>speakChunks(vt,["Hi. This is how I'll read your case.","Pick another voice if this one sounds robotic."]));}
+  }
+  /* ---------- rail highlight ---------- */
+  const chips=$$("#chips a"),map=new Map(chips.map(a=>[a.getAttribute("href").slice(1),a]));
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){chips.forEach(c=>c.classList.remove("on"));const a=map.get(en.target.id);if(a){a.classList.add("on");const p=a.parentElement;p.scrollTo({left:a.offsetLeft-p.clientWidth/2+a.offsetWidth/2,behavior:"smooth"});}}});},{rootMargin:"-45% 0px -50% 0px"});
+    $$("section.step").forEach(s=>io.observe(s));
+  }
+})();
+</script>
+</body>
+<script src="tts.js"></script>
+<script src="chat.js"></script>
+<script src="glossary.js"></script>
+</html>
